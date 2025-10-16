@@ -31,4 +31,5 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--bg-principal);
 }
