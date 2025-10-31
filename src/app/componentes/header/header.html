@@ -7,10 +7,14 @@
     </a>
 
     <ul class="nav-links">
-      <li class="nav-link active"><a>Home</a></li>
-      <li class="nav-link"><a>Serviços</a></li>
-      <li class="nav-link"><a>Carros</a></li>
-      <li class="nav-link"><a>Contato</a></li>
+      <li class="nav-link" routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">
+        <a>Home</a>
+      </li>
+      <li class="nav-link" routerLink="/servicos" routerLinkActive="active"><a>Serviços</a></li>
+      <li class="nav-link" routerLink="/carros" routerLinkActive="active"><a>Carros</a></li>
+      <li class="nav-link" routerLink="/contato" routerLinkActive="active"><a>Contato</a></li>
     </ul>
   </div>
 </nav>
