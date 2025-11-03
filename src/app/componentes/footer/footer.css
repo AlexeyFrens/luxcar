@@ -1,0 +1,79 @@
+
+.footer-container {
+  padding: 40px;
+  background-color: var(--bg-second);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1310px;
+}
+
+.left-side, .right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.left-side .slogan{
+  font-family: "Montserrat", sans-serif;
+  font-size: .875rem;
+  color: var(--text-light);
+  max-width: 300px;
+}
+
+.left-side .social-media-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.right-side h3 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-light);
+  font-size: .75rem;
+}
+
+.right-side .contacts-container {
+  list-style: none;
+}
+
+.right-side .contacts-container .contact {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-light);
+  font-size: .75rem;
+  margin-bottom: 10px;
+}
+
+.right-side .contacts-container .contact:last-child {
+  margin-bottom: 0;
+}
+
+.right-side .contacts-container .contact::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.right-side .contacts-container .contact:nth-child(1)::before {
+  background-image: url("/assets/images/contacts_icons/phone_icon.svg");
+}
+
+.right-side .contacts-container .contact:nth-child(2)::before {
+  background-image: url("/assets/images/contacts_icons/email_icon.svg");
+}
+
+.right-side .contacts-container .contact:nth-child(3)::before {
+  background-image: url("/assets/images/contacts_icons/location_icon.svg");
+}
