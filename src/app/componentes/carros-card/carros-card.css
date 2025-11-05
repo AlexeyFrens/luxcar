@@ -1,0 +1,110 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 325px;
+  width: 100%;
+  max-height: 470px;
+  border-radius: 10px;
+  border: 4px solid var(--border-forth);
+}
+
+.card-container .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.card-container img{
+  max-width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  object-fit: contain;
+}
+
+.card-title, .card-description, .detail {
+  color: var(--text-car-card);
+}
+
+.card-description, .detail, .card-button {
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-container .card-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.card-container .card-description {
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.card-container .card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.card-container .card-details li {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--bg-third);
+  display: flex;
+  align-items: center;
+}
+
+.card-container .card-details li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.card-container .card-details li:nth-child(1)::before {
+  background-image: url("/assets/images/engine.svg");
+}
+
+.card-container .card-details li:nth-child(2)::before {
+  background-image: url("/assets/images/flash.svg");
+}
+
+.card-container .card-details li:nth-child(3)::before {
+  background-image: url("/assets/images/seat.svg");
+}
+
+.card-container .card-button {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bg-button-car-card);
+  color: var(--text-button-contrasted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+.card-container .card-button:hover {
+  background-color: var(--bg-third);
+}
+
+.arrow {
+  font-size: 0.875rem;
+}

@@ -8,6 +8,7 @@
   --bg-principal: #f5f5dc;
   --bg-second: #0d2a24;
   --bg-third: #a97142;
+  --border-forth: #503620;
 
   /* Texts */
   --text-light: #d1c7b8;
@@ -17,10 +18,12 @@
   --text-gold: #bc9852;
   --text-form: #424242;
   --text-title-login-form: #212121;
+  --text-car-card: #503620;
 
   /* Buttons */
   --bg-button-default: #a97142;
   --bg-button-login: #0d2a24;
+  --bg-button-car-card: #503620;
 }
 
 * {
