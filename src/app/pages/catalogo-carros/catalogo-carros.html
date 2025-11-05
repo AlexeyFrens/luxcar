@@ -6,10 +6,8 @@
   <span class="car-input-container"><input type="text" name="car" id="car-input" placeholder="Busque um modelo"></span>
 
   <div class="carros-cards">
-    <app-carros-card></app-carros-card>
-    <app-carros-card></app-carros-card>
-    <app-carros-card></app-carros-card>
-    <app-carros-card></app-carros-card>
-    <app-carros-card></app-carros-card>
+    @for (carro of listaCarros; track carro) {
+      <app-carros-card [carro]="carro"></app-carros-card>
+    }
   </div>
 </section>

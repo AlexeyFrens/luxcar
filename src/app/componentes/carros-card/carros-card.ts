@@ -8,12 +8,12 @@ import {Carro} from '../../core/types/type';
   styleUrl: './carros-card.css'
 })
 export class CarrosCard {
-  @Input() listaCarros: Carro = {
-    description: 'O Huracán EVO Spyder permite experimentar a emoção de uma condução extrema.',
-    engine: 'V10',
-    imageUrl: 'assets/images/car_images/huracan_green.png',
-    power: 640,
-    seats: 2,
-    title: 'Lamborghini Huracan Spyder'
+  @Input() carro: Carro = {
+    description: '',
+    engine: '',
+    imageUrl: '',
+    power: 0,
+    seats: 0,
+    title: ''
   };
 }

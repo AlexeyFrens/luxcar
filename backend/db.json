@@ -1,0 +1,85 @@
+{
+  "carros": [
+    {
+      "id": 1,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762380748/bazid6ajdqe6lhm6wz7q.png",
+      "title": "Lamborghini Huracan Spyder",
+      "description": "O Huracán EVO Spyder permite experimentar a emoção de uma condução extrema.",
+      "engine": "V10",
+      "power": 640,
+      "seats": 2
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762382571/pxej3giqdss8rzwsdkxt.png",
+      "title": "Lamborghini Revuelto",
+      "description": "Design agressivo, desempenho avassalador e a exclusividade de estar ao volante de um dos carros mais raros do planeta.",
+      "engine": "V12",
+      "power": 1015,
+      "seats": 2
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762382934/dii9h8o7zjnb2ockkhjs.png",
+      "title": "Rolls-Royce Boat Tail",
+      "description": "Idealizada por clientes extraordinários e realizada pelos mestres artesãos da Coachbuild, esta imaginação singular honra os proprietários’ pela reverência ao longo da vida pela vida no mar.",
+      "engine": "V12",
+      "power": 570,
+      "seats": 4
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383155/ncbrudyunjhh7rznz4aw.png",
+      "title": "Mercedes-Maybach Exelero",
+      "description": "Um ícone singular, o Exelero combina potência brutal com requinte absoluto. Criado para ser único, ele representa status, sofisticação e a imponência de quem só aceita o extraordinário.",
+      "engine": "V12",
+      "power": 700,
+      "seats": 2
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383323/yjlberpr7qfb7mabedwr.png",
+      "title": "Bugatti Centodieci",
+      "description": "Homenagem moderna ao icônico EB110, o Centodieci é limitado a apenas 10 unidades no mundo. Potência, design futurista e herança Bugatti unidos em um superesportivo que exala exclusividade.",
+      "engine": "W16",
+      "power": 1600,
+      "seats": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383491/gffzsjbavdzkwfwwoloi.png",
+      "title": "Pagani Zonda HP Barchetta",
+      "description": "Considerado uma joia sobre rodas, o Zonda HP Barchetta foi criado em quantidade ínfima, tornando-se um dos carros mais raros já produzidos.",
+      "engine": "V12",
+      "power": 789,
+      "seats": 2
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383714/abs1jzjgtkxrbjq9g9bf.png",
+      "title": "Rolls-Royce La Rose Noire Droptail",
+      "description": "Uma interpretação moderna do estilo da carroceria do roadster, Droptail representa o próximo capítulo de construção de carrocerias Rolls-Royce.",
+      "engine": "V12",
+      "power": 601,
+      "seats": 2
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383910/uea746m7orvctmpgqc9u.png",
+      "title": "Bentley Continental GT Speed",
+      "description": "Poucos carros chamam a atenção como o Continental GT. Ícone da Bentley há mais de 20 anos, sua nova quarta geração está disponível em quatro modelos impressionantes.",
+      "engine": "V8",
+      "power": 771,
+      "seats": 4
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762384062/iq3inq4uqleeojtknd2u.png",
+      "title": "Rolls Royce Sweptail",
+      "description": "Para aqueles que valorizam a raridade em sua forma mais autêntica, a Rolls-Royce Motor Cars apresenta o Coachbuild, uma criação verdadeiramente singular",
+      "engine": "V12",
+      "power": 460,
+      "seats": 2
+    }
+  ]
+}

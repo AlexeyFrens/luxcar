@@ -1,18 +1,18 @@
 <div class="card-container">
-  <img [src]="listaCarros.imageUrl" alt="{{listaCarros.title}}">
+  <img [src]="carro.imageUrl" alt="{{carro.title}}">
 
   <div class="card-content">
     <div>
-      <h1 class="card-title">{{listaCarros.title}}</h1>
+      <h1 class="card-title">{{carro.title}}</h1>
 
-      <p class="card-description">{{listaCarros.description}}</p>
+      <p class="card-description">{{carro.description}}</p>
     </div>
 
     <div>
       <ul class="card-details">
-        <li class="detail">Motor: {{listaCarros.engine}}</li>
-        <li class="detail">Potência: {{listaCarros.power}} cv</li>
-        <li class="detail">Lugares: {{listaCarros.seats}}</li>
+        <li class="detail">Motor: {{carro.engine}}</li>
+        <li class="detail">Potência: {{carro.power}} cv</li>
+        <li class="detail">Lugares: {{carro.seats}}</li>
       </ul>
 
       <button class="card-button">Reservar <span class="material-symbols-outlined arrow">arrow_right_alt</span></button>
