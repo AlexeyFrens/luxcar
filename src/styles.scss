@@ -1,3 +1,5 @@
+@import 'app/themes/luxcar_themetheme.css';
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -24,6 +26,8 @@
   --bg-button-default: #a97142;
   --bg-button-login: #0d2a24;
   --bg-button-car-card: #503620;
+
+  --mat-sys-body-medium: 0;
 }
 
 * {
@@ -35,4 +39,11 @@
 body {
   min-height: 100vh;
   background-color: var(--bg-principal);
+  font-family: "Montserrat", sans-serif !important;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
