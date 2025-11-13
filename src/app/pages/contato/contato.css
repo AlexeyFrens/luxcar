@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+
+  background-color: #fffdf3;
+  color: #1e2c2f;
+}
+
+
+.navbar {
+  background-color: #002c2b;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 35px;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  border-bottom: 2px solid #c48b3f;
+}
+
+
+.intro {
+  text-align: center;
+  padding: 60px 0 20px;
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.intro p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 20px;
+}
+
+.info-contato {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.info-contato div {
+  width: 200px;
+}
+
+
+.info-contato h3 {
+  font-size: 1.2rem;
+  border-top: 2px solid #c48b3f;
+  display: inline-block;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.form-contato {
+  width: 70%;
+  margin: 0 auto 60px;
+}
+
+.form-contato .linha {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-contato input {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid #777;
+  background: transparent;
+  padding: 8px;
+  font-size: 0.95rem;
+}
+
+
+.form-contato .input-mensagem {
+  flex: 2;
+}
+
+
+
+.form-contato button {
+  background-color: #c48b3f;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+
+  /* Linhas adicionadas */
+  margin-top: 15px;
+  display: block;
+  margin-left: auto;
+}
+
+.form-contato button:hover {
+  background-color: #a97534;
+}
