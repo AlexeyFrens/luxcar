@@ -54,6 +54,8 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  font-weight: 600;
+   text-align: justify;
 }
 
 
