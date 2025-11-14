@@ -172,3 +172,16 @@
   font-size: 1rem;
   line-height: 1.6;
 }
+
+
+/*LOGO*/
+.beneficios-logo {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.beneficios-logo img {
+    width: 190px;   
+    
+}
