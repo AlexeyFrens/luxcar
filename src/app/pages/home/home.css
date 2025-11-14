@@ -26,8 +26,9 @@
 
 }
 
-.conteudo-principal{
-  display: flex; /*deixa um do lado do outro*/
+.conteudo-principal {
+  display: flex;
+  /*deixa um do lado do outro*/
   align-items: center;
   justify-content: center;
   gap: 60px;
@@ -41,16 +42,16 @@
   width: 450px;
   height: 390px;
   object-fit: cover;
-  border-radius: 12px; 
+  border-radius: 12px;
   flex-shrink: 0;
 }
 
 
 
-.bloco-texto{
-  max-width:400px;
+.bloco-texto {
+  max-width: 400px;
   display: flex;
-  align-items:center;
+  align-items: center;
   flex-direction: column;
   gap: 20px;
 }
@@ -77,4 +78,97 @@
 
 .btn-frota:hover {
   background-color: #4d2600;
+}
+
+
+
+/* ================================== Benefícios ======================================================= */
+.beneficios {
+  background-color: var(--mat-sys-on-primary-fixed);
+  color: #f1e9c6;
+  padding: 90px 20px;
+}
+
+.beneficios-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.beneficios h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.beneficios-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 65px;
+}
+
+/* GRID — 3 cards por linha fixo em telas grandes */
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+
+}
+
+/* CARDS */
+
+.beneficio-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.beneficio-card {
+  border: 3px solid #c8a96c;
+  padding: 45px 28px;
+  transition: 0.3s ease-in-out;
+
+
+}
+
+
+.beneficio-card:hover {
+  transform: translateY(-6px);
+  background-color: rgba(200, 169, 108, 0.04);
+  box-shadow: 0 0 18px rgba(200, 169, 108, 0.8);
+  border-color: #e3c98b;
+}
+
+
+
+.beneficio-icon img {
+  width: 120px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+.beneficios h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #f1e9c6;
+}
+
+
+
+/* TÍTULO */
+.beneficio-card h3 {
+  font-family: Montserrat;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #c8a96c;
+}
+
+/* TEXTO */
+.beneficio-card p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
