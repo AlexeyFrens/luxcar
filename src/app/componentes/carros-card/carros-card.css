@@ -24,7 +24,7 @@
 }
 
 .card-title, .card-description, .detail {
-  color: var(--text-car-card);
+  color: var(--text-forth);
 }
 
 .card-description, .detail, .card-button {

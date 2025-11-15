@@ -43,7 +43,7 @@
 .carros-section #car-input::placeholder, .carros-section #car-input {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
-  color: var(--text-car-card);
+  color: var(--text-forth);
 }
 
 .carros-section #car-input:focus {
@@ -128,4 +128,11 @@
   border-radius: 10px;
   margin-bottom: 20px;
   height: 70%;
+}
+
+::ng-deep .mat-mdc-slide-toggle .mdc-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: var(--text-forth);
+  font-weight: 700;
 }

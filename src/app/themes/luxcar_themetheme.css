@@ -42,8 +42,10 @@ html {
   --mat-sys-surface-bright: light-dark(#fff8f2, #3e382e);
   --mat-sys-surface-container-low: light-dark(#fdf2e2, #201b12);
   --mat-sys-surface-container-lowest: light-dark(#ffffff, #120e06);
-  --mat-sys-surface-container: light-dark(#f7ecdd, #241f15);
-  --mat-sys-surface-container-high: light-dark(#f2e7d7, #2f291f);
+  /*--mat-sys-surface-container: light-dark(#f7ecdd, #241f15);*/
+  --mat-sys-surface-container: light-dark(#e4e4cc, #474836);
+  /*--mat-sys-surface-container-high: light-dark(#f2e7d7, #2f291f);*/
+  --mat-sys-surface-container-high: light-dark(#e4e4cc, #474836);
   --mat-sys-surface-container-highest: light-dark(#ece1d1, #3a3429);
   --mat-sys-on-surface: light-dark(#201b12, #ece1d1);
   --mat-sys-shadow: light-dark(#000000, #000000);
