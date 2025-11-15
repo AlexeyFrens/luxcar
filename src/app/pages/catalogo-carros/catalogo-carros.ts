@@ -49,7 +49,11 @@ export const MY_FORMATS = {
   styleUrl: './catalogo-carros.css',
 })
 export class CatalogoCarros implements OnInit {
-  listaCarros: Carro[] = [];
+  listaCarrosCompleta: Carro[] = [];
+  listaCarrosExibidos: Carro[] = [];
+  limiteCarros = 8;
+  incremento = 8;
+
   minDate: Date;
 
   bookingForm = new FormGroup({
@@ -73,7 +77,16 @@ export class CatalogoCarros implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.findAll().subscribe(carros => this.listaCarros = carros);
+    this.service.findAll().subscribe(carros => {
+      this.listaCarrosCompleta = carros
+      this.listaCarrosExibidos = carros.slice(0, this.limiteCarros);
+    });
+  }
+
+  aumentarLista() {
+    this.limiteCarros += this.incremento;
+
+    this.listaCarrosExibidos = this.listaCarrosCompleta.slice(0, this.limiteCarros);
   }
 
   search() {
@@ -93,5 +106,4 @@ export class CatalogoCarros implements OnInit {
   clearForm(): void {
     this.bookingForm.reset();
   }
-
 }

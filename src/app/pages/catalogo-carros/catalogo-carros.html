@@ -52,8 +52,14 @@
   <span class="car-input-container"><input type="text" name="car" id="car-input" placeholder="Busque um modelo"></span>
 
   <div class="carros-cards">
-    @for (carro of listaCarros; track carro) {
+    @for (carro of listaCarrosExibidos; track carro) {
       <app-carros-card [carro]="carro"></app-carros-card>
     }
   </div>
+
+  @if (listaCarrosCompleta.length !== 8 && listaCarrosExibidos.length !== listaCarrosCompleta.length) {
+    <div class="button-container">
+      <button class="button-ver-mais" (click)="aumentarLista()">Veja mais</button>
+    </div>
+  }
 </section>
