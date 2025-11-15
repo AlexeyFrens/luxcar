@@ -194,3 +194,182 @@
     width: 190px;
 
 }
+
+
+/* ================================================ Seção Destaques ========================================= */
+.destaques {
+  background-color: var(--mat-sys-on-primary-fixed);
+  color: #f1e9c6;
+  padding: 90px 20px;
+}
+
+.destaques-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.destaques h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.destaques-subtitle {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 65px;
+  font-family: "Montserrat";
+}
+
+/* GRID dos vídeos */
+.destaques-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+/* Vídeos - Efeito Premium */
+.video-card {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(200, 169, 108, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  z-index: 1;
+}
+
+/* Efeito de expansão no hover */
+.video-card:hover {
+  transform: scale(1.15) translateY(-10px); /* Expande 15% e sobe */
+  max-width: 320px; /* Aumenta a largura máxima */
+  z-index: 10; /* Traz para frente */
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.6),
+    0 0 0 2px rgba(200, 169, 108, 0.3),
+    0 0 30px rgba(200, 169, 108, 0.4); /* Glow dourado */
+}
+
+/* Efeito sutil nos cards não hoverados */
+.destaques-grid:hover .video-card:not(:hover) {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+/* Estado inicial - vídeo pausado */
+.video-destaque {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) saturate(0.8);
+  transition: all 0.4s ease;
+}
+
+
+/* Quando o mouse passa por cima, o vídeo toca */
+.video-card:hover .video-destaque {
+  filter: brightness(1.1) saturate(1.2) contrast(1.05);
+}
+
+
+.video-card:hover::before {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Borda sutil no card */
+.video-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(200, 169, 108, 0.3);
+  border-radius: 16px;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.video-card:hover::after {
+  border: 2px solid rgba(200, 169, 108, 0.6);
+  box-shadow: inset 0 0 20px rgba(200, 169, 108, 0.2);
+}
+
+/* Efeito de brilho no hover */
+.video-card:hover {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.6),
+      0 0 0 2px rgba(200, 169, 108, 0.3),
+      0 0 30px rgba(200, 169, 108, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.6),
+      0 0 0 2px rgba(200, 169, 108, 0.4),
+      0 0 40px rgba(200, 169, 108, 0.6);
+  }
+  100% {
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.6),
+      0 0 0 2px rgba(200, 169, 108, 0.3),
+      0 0 30px rgba(200, 169, 108, 0.4);
+  }
+}
+
+/* Garantir que o container tenha espaço suficiente */
+.destaques-grid {
+  min-height: 600px;
+  align-items: center;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .destaques-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .video-card:hover {
+    transform: scale(1.1) translateY(-8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .destaques-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .video-card {
+    max-width: 300px;
+  }
+  
+  .video-card:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+}
