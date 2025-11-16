@@ -1,0 +1,28 @@
+<main class="login-container">
+  <div class="image-section"></div>
+
+  <div class="form-section">
+    <div class="form-wrapper">
+      <h2>Faça o Login para Acessar o Painel</h2>
+      <p>LOGUE PRA CONTINUAR</p>
+
+      <form>
+        <div class="input-group">
+          <i data-feather="mail"></i>
+          <input type="email" placeholder="example@email.com" required />
+        </div>
+
+        <div class="input-group password-group">
+          <i data-feather="lock"></i>
+          <input id="passwordLogin" type="password" placeholder="********" required />
+          <span class="show-password" (click)="togglePassword()">EXIBIR</span>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Logar
+          <i data-feather="arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
