@@ -92,7 +92,9 @@
   <div class="conteudo-principal">
     <div class="bloco-texto">
       <p>
-        Mais do que dirigir um carro de luxo, viva a experiência de ter cada detalhe da sua jornada cuidadosamente planejado. Nosso serviço concierge está pronto para atender desejos exclusivos, oferecendo praticidade, conforto e sofisticação sob medida para você. Uma experiência reservada apenas a quem exige o extraordinário.
+        Mais do que dirigir um carro de luxo, viva a experiência de ter cada detalhe da sua jornada cuidadosamente
+        planejado. Nosso serviço concierge está pronto para atender desejos exclusivos, oferecendo praticidade, conforto
+        e sofisticação sob medida para você. Uma experiência reservada apenas a quem exige o extraordinário.
       </p>
       <a href="#" class="btn-frota">Solicitar serviço →</a>
     </div>
@@ -113,25 +115,19 @@
     </p>
 
     <div class="destaques-grid">
-      <div class="video-card" 
-           (mouseenter)="playVideo($event)" 
-           (mouseleave)="pauseVideo($event)">
+      <div class="video-card" (mouseenter)="playVideo($event)" (mouseleave)="pauseVideo($event)">
         <video #video1 class="video-destaque" muted loop playsinline preload="metadata">
           <source src="assets/video/ps-destaque.mp4" type="video/mp4">
         </video>
       </div>
 
-      <div class="video-card" 
-           (mouseenter)="playVideo($event)" 
-           (mouseleave)="pauseVideo($event)">
+      <div class="video-card" (mouseenter)="playVideo($event)" (mouseleave)="pauseVideo($event)">
         <video #video2 class="video-destaque" muted loop playsinline preload="metadata">
           <source src="assets/video/bugatti-destaque.mp4" type="video/mp4">
         </video>
       </div>
 
-      <div class="video-card" 
-           (mouseenter)="playVideo($event)" 
-           (mouseleave)="pauseVideo($event)">
+      <div class="video-card" (mouseenter)="playVideo($event)" (mouseleave)="pauseVideo($event)">
         <video #video3 class="video-destaque" muted loop playsinline preload="metadata">
           <source src="assets/video/rr-destaque.mp4" type="video/mp4">
         </video>
@@ -139,5 +135,52 @@
     </div>
 
     <a href="/carros" class="btn-frota">Veja todos os carros ➜</a>
+  </div>
+</section>
+
+<!-- Seção Opinião de Nossos Clientes -->
+<section class="clientes-section">
+  <div class="clientes-container">
+    <h2 class="titulo-clientes">Opinião dos nossos clientes</h2>
+    
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" (click)="grupoAnterior()">‹</button>
+      
+      <div class="carousel">
+        <div class="cliente-card" *ngFor="let cliente of clientesVisiveis">
+          <div class="card-content">
+            <!-- Estrelas -->
+            <div class="estrelas">
+              <span *ngFor="let estrela of [1,2,3,4,5]">★</span>
+            </div>
+            
+            <!-- Comentário -->
+            <p class="cliente-comentario">"{{ cliente.comentario }}"</p>
+            
+            <!-- Foto e informações -->
+            <div class="cliente-info">
+              <img [src]="cliente.foto" [alt]="'Foto de ' + cliente.nome" class="cliente-foto" />
+              <div class="cliente-detalhes">
+                <h3 class="cliente-nome">{{ cliente.nome }}</h3>
+                <p class="cliente-cargo">{{ cliente.cargo }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="carousel-btn next" (click)="proximoGrupo()">›</button>
+    </div>
+
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button 
+        *ngFor="let grupo of [].constructor(totalGrupos); let i = index" 
+        class="carousel-indicator" 
+        [class.active]="i === clienteGrupoAtual"
+        (click)="clienteGrupoAtual = i">
+      </button>
+    </div>
   </div>
 </section>

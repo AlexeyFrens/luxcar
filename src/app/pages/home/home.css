@@ -59,7 +59,7 @@
   flex-direction: column;
   gap: 20px;
   font-weight: 600;
-   text-align: start;
+  text-align: start;
 }
 
 
@@ -80,7 +80,6 @@
   padding: 12px 24px;
   border-radius: 6px;
   font-weight: 500;
-  transition: background 0.3s ease;
   display: inline-block;
   align-self: flex-start;
 }
@@ -185,13 +184,13 @@
 
 /*LOGO*/
 .beneficios-logo {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
 }
 
 .beneficios-logo img {
-    width: 190px;
+  width: 190px;
 
 }
 
@@ -241,7 +240,7 @@
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(200, 169, 108, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -252,13 +251,17 @@
 
 /* Efeito de expansão no hover */
 .video-card:hover {
-  transform: scale(1.15) translateY(-10px); /* Expande 15% e sobe */
-  max-width: 320px; /* Aumenta a largura máxima */
-  z-index: 10; /* Traz para frente */
-  box-shadow: 
+  transform: scale(1.15) translateY(-10px);
+  /* Expande 15% e sobe */
+  max-width: 320px;
+  /* Aumenta a largura máxima */
+  z-index: 10;
+  /* Traz para frente */
+  box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.6),
     0 0 0 2px rgba(200, 169, 108, 0.3),
-    0 0 30px rgba(200, 169, 108, 0.4); /* Glow dourado */
+    0 0 30px rgba(200, 169, 108, 0.4);
+  /* Glow dourado */
 }
 
 /* Efeito sutil nos cards não hoverados */
@@ -322,19 +325,21 @@
 
 @keyframes pulse-glow {
   0% {
-    box-shadow: 
+    box-shadow:
       0 25px 50px rgba(0, 0, 0, 0.6),
       0 0 0 2px rgba(200, 169, 108, 0.3),
       0 0 30px rgba(200, 169, 108, 0.4);
   }
+
   50% {
-    box-shadow: 
+    box-shadow:
       0 25px 50px rgba(0, 0, 0, 0.6),
       0 0 0 2px rgba(200, 169, 108, 0.4),
       0 0 40px rgba(200, 169, 108, 0.6);
   }
+
   100% {
-    box-shadow: 
+    box-shadow:
       0 25px 50px rgba(0, 0, 0, 0.6),
       0 0 0 2px rgba(200, 169, 108, 0.3),
       0 0 30px rgba(200, 169, 108, 0.4);
@@ -353,7 +358,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .video-card:hover {
     transform: scale(1.1) translateY(-8px);
   }
@@ -364,12 +369,253 @@
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  
+
   .video-card {
     max-width: 300px;
   }
-  
+
   .video-card:hover {
     transform: scale(1.05) translateY(-5px);
+  }
+}
+
+/* =========================================== SEÇÃO CLIENTES ============================================ */
+.clientes-section {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.clientes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.titulo-clientes {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--mat-sys-primary);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* ===== CARROSSEL ===== */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* ===== CARDS DE CLIENTE ===== */
+.cliente-card {
+  background: var(--mat-sys-secondary);
+  border-radius: 20px;
+  padding: 40px 0px;
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cliente-card::before {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #c8a96c, transparent);
+  transition: opacity 0.3s ease;
+}
+
+
+.cliente-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(200, 169, 108, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== ESTRELAS ===== */
+.estrelas {
+  color: #c8a96c;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* ===== COMENTÁRIO ===== */
+.cliente-comentario {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #fff;
+  margin-bottom: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+  padding: 0 10px;
+}
+
+
+
+/* ===== INFORMAÇÕES DO CLIENTE ===== */
+.cliente-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.cliente-foto {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cliente-detalhes {
+  flex-grow: 1;
+}
+
+.cliente-nome {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.cliente-cargo {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  color: #f1e9c6;
+  font-family: "Montserrat";
+  letter-spacing: 1px;
+}
+
+/* ===== BOTÕES DO CARROSSEL ===== */
+.carousel-btn {
+  background: #c8a96c;
+  border: 2px solid #c8a96c;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background: #c8a96c;
+  color:var(--mat-sys-secondary);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(200, 169, 108, 0.4);
+}
+
+/* ===== INDICADORES ===== */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(200, 169, 108, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-indicator.active {
+  background: #c8a96c;
+  transform: scale(1.3);
+}
+
+.carousel-indicator:hover {
+  background: #c8a96c;
+  transform: scale(1.2);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .carousel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .carousel-wrapper {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clientes-section {
+    padding: 60px 20px;
+  }
+  
+  .carousel {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cliente-card {
+    padding: 30px 20px;
+  }
+  
+  .carousel-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .titulo-clientes {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    gap: 15px;
+  }
+  
+  .cliente-comentario {
+    font-size: 0.9rem;
+  }
+  
+  .cliente-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .cliente-foto {
+    width: 50px;
+    height: 50px;
   }
 }
