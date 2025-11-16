@@ -35,8 +35,8 @@
 
         <div class="input-group password-group">
           <i data-feather="lock"></i>
-          <input type="password" placeholder="********" required />
-          <span class="show-password">EXIBIR</span>
+          <input id="passwordInput" type="password" placeholder="********" required />
+          <span class="show-password" (click)="togglePassword()">EXIBIR</span>
         </div>
 
         <button type="submit" class="submit-btn">
