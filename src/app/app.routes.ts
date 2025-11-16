@@ -3,7 +3,7 @@ import {CatalogoCarros} from './pages/catalogo-carros/catalogo-carros';
 import {Home} from './pages/home/home';
 import {Servicos} from './pages/servicos/servicos';
 import {Contato} from './pages/contato/contato';
-
+import {Cadastro} from './pages/cadastro/cadastro';
 export const routes: Routes = [
   {
     path: '',
@@ -24,5 +24,10 @@ export const routes: Routes = [
     path: 'contato',
     component: Contato,
     title: 'Luxcar - Contato'
+  },
+  {
+    path: 'cadastro',
+    component: Cadastro,
+    title: 'Luxcar - Cadastro'
   }
 ];
