@@ -17,7 +17,7 @@ body {
 }
 .image-section {
 
-  background: url('/assets/images/login-imagens/image0.jpg') center center / cover no-repeat;
+  background: url('/assets/images/cadastro-imagens/image0.jpg') center center / cover no-repeat;
 }
 
 .form-section {
@@ -115,7 +115,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   width: 100%;
- font-family: Montserrat;
+  font-family: Montserrat;
   text-align: center;
   align-items: center;
   transition: background 0.3s ease;
