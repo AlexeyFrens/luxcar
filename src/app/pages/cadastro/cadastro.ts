@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-cadastro',
   imports: [],
+  standalone: true,
   templateUrl: './cadastro.html',
   styleUrl: './cadastro.css'
 })
