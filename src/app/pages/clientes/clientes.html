@@ -1,0 +1,54 @@
+<h1 class="titulo-pagina">Painel Administrativo - Clientes</h1>
+
+<div class="content-container">
+  <table>
+    <thead>
+    <tr>
+      <th>ID-Cliente</th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Endereço</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+
+    <tbody>
+      @for (cliente of listaClientes; track cliente) {
+
+        <tr>
+          <td>{{cliente.id}}</td>
+          <td><strong>{{cliente.nome}}</strong></td>
+          <td>{{cliente.cpf}}</td>
+          <td>{{cliente.email}}</td>
+          <td>{{cliente.telefone}}</td>
+          <td>{{cliente.endereco}}</td>
+
+          <td class="actions-cell">
+
+
+            <button class="action-icon"
+                    [routerLink]="['/cadastro', cliente.id]"
+                    title="Editar">
+              <img src="/assets/images/clientes-icons/edit.svg"
+                   alt="Editar"
+                   class="icon-edit" />
+            </button>
+
+
+            <button class="action-icon"
+                    title="Excluir"
+                    (click)="excluircliente(cliente.id!)">
+              <img src="/assets/images/clientes-icons/delete.svg"
+                   alt="Excluir"
+                   class="icon-delete" />
+            </button>
+
+          </td>
+        </tr>
+
+      }
+    </tbody>
+  </table>
+</div>

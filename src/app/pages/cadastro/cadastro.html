@@ -10,27 +10,27 @@
       <form action="#">
         <div class="input-group">
           <i data-feather="user"></i>
-          <input type="text" placeholder="Johnson Doe" required />
+          <input id="nome" type="text"  name="nome" [(ngModel)]="cliente.nome"  placeholder="Johnson Doe" required />
         </div>
 
         <div class="input-group">
           <i data-feather="mail"></i>
-          <input type="email" placeholder="example@email.com" required />
+          <input id="email"  name="email" [(ngModel)]="cliente.email"  type="email" placeholder="example@email.com" required />
         </div>
 
         <div class="input-group">
           <i data-feather="credit-card"></i>
-          <input type="text" placeholder="123.123.123-12" required />
+          <input id="cpf"  name ="cpf" [(ngModel)]="cliente.cpf"  type="text" placeholder="123.123.123-12" required />
         </div>
 
         <div class="input-group">
           <i data-feather="phone"></i>
-          <input type="tel" placeholder="(12-34567-8901)" required />
+          <input id="telefone" name="telefone" [(ngModel)]="cliente.telefone"  type="tel" placeholder="(12-34567-8901)" required />
         </div>
 
         <div class="input-group">
           <i data-feather="map-pin"></i>
-          <input type="text" placeholder="Av. nações Unidas, 123" required />
+          <input  id ="endereco"  name="nome" [(ngModel)]="cliente.endereco"  type="text" placeholder="Av. nações Unidas, 123" required />
         </div>
 
         <div class="input-group password-group">
@@ -39,7 +39,7 @@
           <span class="show-password" (click)="togglePassword()">EXIBIR</span>
         </div>
 
-        <button type="submit" class="submit-btn">
+        <button type="button"  (click)="submeter()" class="submit-btn">
           Cadastrar Administrador
           <i data-feather="arrow-right"></i>
         </button>

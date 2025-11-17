@@ -5,6 +5,7 @@ import {Servicos} from './pages/servicos/servicos';
 import {Contato} from './pages/contato/contato';
 import {Cadastro} from './pages/cadastro/cadastro';
 import {Login} from './pages/login/login';
+import { Clientes } from './pages/clientes/clientes';
 
 export const routes: Routes = [
   {
@@ -38,6 +39,12 @@ export const routes: Routes = [
     component: Login,
     title: 'Luxcar - Login'
   },
+
+  {
+    path: 'clientes',
+    component: Clientes,
+    title: 'Luxcar - Clientes'
+  }
 
 
 ];
