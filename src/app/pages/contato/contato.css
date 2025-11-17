@@ -1,128 +1,267 @@
-body {
+/* Reset */
+* {
   margin: 0;
-
-  background-color: #fffdf3;
-  color: #1e2c2f;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-.navbar {
-  background-color: #002c2b;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 80px;
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--mat-sys-background);
+  color: #36454f;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Container principal */
+.contato-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
 }
 
-.logo img {
-  width: 35px;
-}
-
-.navbar nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 30px;
-  font-weight: 500;
-}
-
-.navbar nav a:hover {
-  border-bottom: 2px solid #c48b3f;
-}
-
-
+/* ===== INTRO ===== */
 .intro {
   text-align: center;
-  padding: 60px 0 20px;
+  margin-bottom: 70px;
 }
 
 .intro h2 {
-  font-size: 1.8rem;
-  margin-bottom: 5px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #36454f;
 }
 
 .intro p {
-  color: #555;
-  font-size: 0.95rem;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #36454F;
 }
 
-
+/* ===== TÍTULO ===== */
 .titulo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  font-weight: 600;
   text-align: center;
-  font-size: 2rem;
-  margin: 40px 0 20px;
+  margin-bottom: 80px;
+  color: #36454F;
 }
 
+/* ===== INFORMAÇÕES ===== */
 .info-contato {
   display: flex;
-  justify-content: center;
-  gap: 60px;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  gap: 40px;
   text-align: center;
-  margin-bottom: 50px;
 }
 
-.info-contato div {
-  width: 200px;
+.info-contato .item {
+  flex: 1;
 }
 
+.linha-top {
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--mat-sys-secondary);
+  margin: 0 auto 15px;
+}
 
 .info-contato h3 {
-  font-size: 1.2rem;
-  border-top: 2px solid #c48b3f;
-  display: inline-block;
-  padding: 5px 0;
-  margin-bottom: 10px;
-}
-
-.form-contato {
-  width: 70%;
-  margin: 0 auto 60px;
-}
-
-.form-contato .linha {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.form-contato input {
-  flex: 1;
-  border: none;
-  border-bottom: 1px solid #777;
-  background: transparent;
-  padding: 8px;
-  font-size: 0.95rem;
-}
-
-
-.form-contato .input-mensagem {
-  flex: 2;
-}
-
-
-
-.form-contato button {
-  background-color: #c48b3f;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
   font-weight: 600;
-  border-radius: 3px;
-  transition: background 0.3s ease;
-
-  /* Linhas adicionadas */
-  margin-top: 15px;
-  display: block;
-  margin-left: auto;
+  margin-bottom: 15px;
+  color: #36454F;
 }
 
-.form-contato button:hover {
-  background-color: #a97534;
+.info-contato p {
+  color: #36454F;
+  line-height: 1.6;
+}
+
+/* ===== FORMULÁRIO ===== */
+.form-contato {
+  max-width: 900px;
+  margin: auto;
+}
+
+.linha {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-bottom: 40px;
+  align-items: end;
+}
+
+.linha input {
+  border: none;
+  border-bottom: 2px solid var(--mat-sys-outline-variant);
+  background: transparent;
+  padding: 10px 0;
+  font-size: 1rem;
+  color: var(--mat-sys-on-surface);
+}
+
+.linha input::placeholder {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.linha input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--mat-sys-secondary);
+}
+
+.mensagem {
+    width: 100%;
+}
+
+.grid-btn {
+  grid-column: 3; 
+  align-self: end; 
+}
+
+/* Botão */
+.btn-enviar {
+   padding: 12px 26px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--bg-button-default);
+  color: var(--text-button-contrasted);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: -80px;
+  margin-left: 620px;
+  display: block;
+}
+
+.btn-enviar:hover {
+   background-color: var(--bg-button-default-hover);
+}
+
+
+
+/* ===== POP-UP DE CONFIRMAÇÃO ===== */
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 42, 36, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.confirmation-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.confirmation-card {
+  background: rgba(4, 20, 15, 0.92);
+  padding: 60px 50px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(30px);
+  transition: transform 0.4s ease;
+  position: relative;
+}
+
+.confirmation-overlay.active .confirmation-card {
+  transform: translateY(0);
+}
+
+
+.confirmation-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #BC9852;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.confirmation-logo {
+  width: 130px;     
+  margin: 0 auto 25px;
+  display: block;
+}
+
+
+.confirmation-message {
+  color: var(--text-button-contrasted);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  font-weight: 200; 
+}
+
+.confirmation-button {
+  background: var(--bg-button-default);
+  color:var(--text-button-contrasted);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  display: inline-block;
+}
+
+.confirmation-button:hover {
+ background-color: var(--bg-button-default-hover);
+}
+
+/* Responsividade do pop-up */
+@media (max-width: 768px) {
+  .confirmation-card {
+    padding: 40px 25px;
+  }
+  
+  .confirmation-title {
+    font-size: 2rem;
+  }
+  
+  .confirmation-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .info-contato {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .linha {
+    grid-template-columns: 1fr;
+  }
+
+  .mensagem {
+    grid-column: span 1;
+  }
+
+  .btn-enviar {
+    margin-left: auto;
+    display: block;
+  }
 }

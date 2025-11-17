@@ -1,52 +1,65 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<main class="contato-container">
 
-  <link rel="icon" type="image/png" href="/assets/images/luxcar_favicon.png" />
-  <link rel="stylesheet" href="contato.css" />
-</head>
-<body>
+  <section class="intro">
+    <h2>Seu Acesso exclusivo começa aqui</h2>
+    <p>Estamos Prontos para atender você de forma personalizada</p>
+  </section>
 
-  <main class="contato-container">
-    <section class="intro">
-      <h2>Seu Acesso exclusivo começa aqui</h2>
-      <p>Estamos Prontos para atender você de forma personalizada</p>
-    </section>
+  <h1 class="titulo">Contato</h1>
 
-    <h1 class="titulo">Contato</h1>
+  <section class="info-contato">
+    <div class="item">
+      <span class="linha-top"></span>
+      <h3>Estamos Aqui</h3>
+      <p>Av. Cidade Jardim - 383, Itaim Bibi<br>São Paulo - SP</p>
+    </div>
 
-    <section class="info-contato">
-      <div>
-        <h3>Estamos Aqui</h3>
-        <p>Av. Cidade Jardim - 383, Itaim Bibi São Paulo - SP</p>
-      </div>
-      <div>
-        <h3>Contato</h3>
-        <p>+55 11 94389-6743<br>contato@luxcar.com</p>
-      </div>
-      <div>
-        <h3>Horário de atendimento</h3>
-        <p>Segunda a Sexta<br>09:00 às 18:00</p>
-      </div>
-    </section>
+    <div class="item">
+      <span class="linha-top"></span>
+      <h3>Contato</h3>
+      <p>+55 11 94389-6743<br>contato@luxcar.com</p>
+    </div>
 
-    <form class="form-contato">
-      <div class="linha">
-        <input type="text" placeholder="Primeiro nome" required />
-        <input type="text" placeholder="Sobrenome" required />
-        <input type="tel" placeholder="Telefone" required />
-      </div>
-      <div class="linha">
-        <input type="email" placeholder="*E-mail" required />
-        <input type="text" placeholder="Deixe sua mensagem" class="input-mensagem" required />
-      </div>
-      <button type="submit">Enviar</button>
-    </form>
-  </main>
+    <div class="item">
+      <span class="linha-top"></span>
+      <h3>Horário de atendimento</h3>
+      <p>Segunda a Sexta<br>09:00 às 18:00</p>
+    </div>
+  </section>
+
+  <form class="form-contato" (ngSubmit)="enviarSolicitacao()">
+
+  <div class="linha">
+    <input type="text" placeholder="Primeiro nome" required />
+    <input type="text" placeholder="Sobrenome" required />
+    <input type="tel" placeholder="Telefone" required />
+  </div>
+
+  <div class="linha">
+    <input type="email" placeholder="*E-mail" required />
+    <input type="text" placeholder="Deixe sua mensagem" class="mensagem" required />
+  </div>
+
+  <button type="submit" class="btn-enviar grid-btn">Enviar</button>
+</form>
 
 
 
-</body>
-</html>
+
+</main>
+
+<div class="confirmation-overlay" [class.active]="mostrarConfirmacao">
+    <div class="confirmation-card">
+      <h1 class="confirmation-title">Solicitação Enviada</h1>
+      
+      <p class="confirmation-message">
+        Sua mensagem foi recebida com sucesso. Nossa equipe de especialistas entrará em contato 
+        em até 24 horas para oferecer uma experiência totalmente personalizada.
+      </p>
+
+      <img src="assets/images/luxcar_logo.svg" class="confirmation-logo">
+      <button class="confirmation-button" (click)="fecharConfirmacao()">
+        Continuar Navegando
+      </button>
+    </div>
+  </div>
