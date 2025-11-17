@@ -12,6 +12,7 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular
 import {provideMomentDateAdapter} from '@angular/material-moment-adapter';
 import 'moment/locale/pt-br';
 import {MatTimepickerModule} from '@angular/material/timepicker';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 export const MY_FORMATS = {
   parse: {
@@ -45,6 +46,7 @@ interface CarroSituacao extends Carro {
     ReactiveFormsModule,
     MatTimepickerModule,
     FormsModule,
+    MatSlideToggleModule,
   ],
   providers: [
     provideMomentDateAdapter(),
@@ -65,6 +67,8 @@ export class CatalogoCarros implements OnInit {
   minDate: Date;
 
   modal = ""
+
+  mostrarApenasDisponiveis = false;
 
   dadosReserva: {
     carro: Carro | null;
@@ -113,6 +117,10 @@ export class CatalogoCarros implements OnInit {
       this.listaFiltrada = this.listaCarrosCompleta.filter(carro =>
         carro.carBrand?.toLowerCase().includes(termo)
       )
+    }
+
+    if (this.mostrarApenasDisponiveis) {
+      this.listaFiltrada = this.listaFiltrada.filter(carro => carro.isAvailable)
     }
 
     this.listaCarrosExibidos = this.listaFiltrada.slice(0, this.limiteCarros);

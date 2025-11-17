@@ -55,10 +55,10 @@
   align-items: center;
   position: relative;
   padding: 10px;
-  margin-bottom: 40px;
   border: 2px solid var(--border-forth);
   border-radius: 50px;
   max-width: 400px;
+  flex: 1;
 }
 
 .carros-section .car-input-container::before {
@@ -135,6 +135,13 @@
   font-size: 1rem;
   color: var(--text-forth);
   font-weight: 700;
+}
+
+.options {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .button-container {

@@ -49,9 +49,13 @@
     <button type="button" matButton="filled" class="clear-button limpa" (click)="clearForm()">Limpar</button>
   </form>
 
-  <span class="car-input-container">
+  <div class="options">
+    <span class="car-input-container">
     <input type="text" name="car" id="car-input" placeholder="Busque um modelo" [(ngModel)]="filtro" (input)="aplicarFiltro()">
   </span>
+
+    <p><mat-slide-toggle [(ngModel)]="mostrarApenasDisponiveis" (change)="aplicarFiltro()">Mostrar apenas disponíveis</mat-slide-toggle></p>
+  </div>
 
   <div class="carros-cards">
     @for (carro of listaCarrosExibidos; track carro) {
