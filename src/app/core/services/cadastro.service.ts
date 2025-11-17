@@ -29,6 +29,9 @@ export class CadastroService {
   }
 
   excluircliente(id: number): Observable<Cliente> {
-    return this.http.delete<Cliente>(this.API + `/${id}`);
+    return this.http.delete<Cliente>(`${this.API}/${id}`);
   }
-}
+
+  atualizarCliente(cliente: any) {
+    return this.http.put(`${this.API}/${cliente.id}`, cliente);
+  }}

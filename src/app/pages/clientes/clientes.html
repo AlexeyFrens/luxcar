@@ -29,7 +29,7 @@
 
 
             <button class="action-icon"
-                    [routerLink]="['/cadastro', cliente.id]"
+                    (click)="abrirModal(cliente)"
                     title="Editar">
               <img src="/assets/images/clientes-icons/edit.svg"
                    alt="Editar"
@@ -40,9 +40,7 @@
             <button class="action-icon"
                     title="Excluir"
                     (click)="excluircliente(cliente.id!)">
-              <img src="/assets/images/clientes-icons/delete.svg"
-                   alt="Excluir"
-                   class="icon-delete" />
+              <img src="/assets/images/clientes-icons/delete.svg" alt="Excluir" class="icon-delete" />
             </button>
 
           </td>
@@ -51,4 +49,70 @@
       }
     </tbody>
   </table>
+</div>
+
+
+
+
+<div class="edit-modal-overlay" *ngIf="modalAberto">
+
+  <div class="edit-modal">
+
+    <button class="close-btn" (click)="fecharModal()">✕</button>
+
+    <h2 class="modal-title">{{ clienteEditando.nome }},{{ clienteEditando.idCliente }}</h2>
+    <p class="modal-subtitle">EDITAR INFORMAÇÕES</p>
+
+    <form class="modal-form">
+
+
+      <div class="modal-input-group">
+        <i data-feather="user"></i>
+        <input type="text" [(ngModel)]="clienteEditando.nome" name="nome" />
+      </div>
+
+
+      <div class="modal-input-group">
+        <i data-feather="mail"></i>
+        <input type="email" [(ngModel)]="clienteEditando.email" name="email" />
+      </div>
+
+
+      <div class="modal-input-group">
+        <i data-feather="credit-card"></i>
+        <input type="text" [(ngModel)]="clienteEditando.cpf" name="cpf" />
+      </div>
+
+
+      <div class="modal-input-group">
+        <i data-feather="phone"></i>
+        <input type="text" [(ngModel)]="clienteEditando.telefone" name="telefone" />
+      </div>
+
+
+      <div class="modal-input-group">
+        <i data-feather="map-pin"></i>
+        <input type="text" [(ngModel)]="clienteEditando.endereco" name="endereco" />
+      </div>
+
+
+      <div class="modal-input-group password-group">
+        <i data-feather="lock"></i>
+        <input type="password" placeholder="********" />
+        <span class="show-password-modal">EXIBIR</span>
+      </div>
+
+      <div class="modal-action-row">
+        <button type="button" class="btn-atualizar" (click)="salvarEdicao()">
+          Atualizar
+        </button>
+
+        <button type="button" class="btn-arrow" (click)="salvarEdicao()">
+          →
+        </button>
+      </div>
+
+    </form>
+  </div>
+
 </div>

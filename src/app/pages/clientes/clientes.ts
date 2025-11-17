@@ -3,11 +3,14 @@ import { Cliente } from "../../core/types/type";
 import { CadastroService } from "../../core/services/cadastro.service";
 import {Router, RouterModule} from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-clientes',
   imports: [RouterModule,
-    CommonModule],
+    CommonModule,
+    FormsModule,],
   templateUrl: './clientes.html',
   styleUrl: './clientes.css'
 })
@@ -32,6 +35,37 @@ export class Clientes implements OnInit {
         window.location.reload();
       });
     }
+  }
+
+
+
+  modalAberto = false;
+
+  clienteEditando: any = {
+    id: 0,
+    nome: "",
+    email: "",
+    cpf: "",
+    telefone: "",
+    endereco: ""
+  };
+
+  abrirModal(cliente: any) {
+    this.clienteEditando = { ...cliente };
+    this.modalAberto = true;
+  }
+
+  fecharModal() {
+    this.modalAberto = false;
+  }
+
+  salvarEdicao() {
+    this.service.editar(this.clienteEditando).subscribe(() => {
+      // Recarrega a lista corretamente
+      this.ngOnInit();
+
+      this.modalAberto = false;
+    });
   }
 
 }
