@@ -12,10 +12,6 @@ export class Home implements AfterViewInit {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   @ViewChildren('video1, video2, video3') videoDestaques!: QueryList<ElementRef<HTMLVideoElement>>;
 
-  /*
-  * Usando essa função, estamos garantindo que o vídeo já foi
-  * carregado no DOM e podemos manipulá-lo
-  */
   ngAfterViewInit() {
     this.configurarHeroVideo();
     this.configurarVideosDestaques();
@@ -23,41 +19,28 @@ export class Home implements AfterViewInit {
 
   private configurarHeroVideo() {
     const video = this.heroVideo.nativeElement;
-
     video.muted = true;
 
     const tryPlay = () => {
       video.play().catch(err => {
         console.warn('Erro no vídeo hero:', err);
-      })
-    }
+      });
+    };
 
-    //Verifica se o vídeo carregou dados suficientes para iniciar
     if (video.readyState >= 3) {
-      tryPlay()
+      tryPlay();
     } else {
-      /* Espera o evento que indica que o vídeo está pronto para
-      *  iniciar (mesmo não carregando tudo)
-      *
-      *  Depois tenta iniciar novamente
-      */
-      video.addEventListener('loadeddata', tryPlay, { once: true })
+      video.addEventListener('loadeddata', tryPlay, { once: true });
     }
   }
 
   private configurarVideosDestaques() {
     this.videoDestaques.forEach((videoRef, index) => {
       const video = videoRef.nativeElement;
-
-      // Configurações básicas dos vídeos de destaque
       video.muted = true;
       video.preload = 'metadata';
 
-      // Adiciona listeners para debug
-      video.addEventListener('loadeddata', () => {
-        console.log(`Vídeo destaque ${index + 1} carregado`);
-      });
-
+      
       video.addEventListener('error', (e) => {
         console.error(`Erro no vídeo destaque ${index + 1}:`, e);
       });
@@ -70,20 +53,16 @@ export class Home implements AfterViewInit {
     const video = videoCard.querySelector('video') as HTMLVideoElement;
 
     if (video) {
-      // Garante que o vídeo está mudo e pronto para reproduzir
       video.muted = true;
-      video.currentTime = 0; // Reinicia o vídeo
+      video.currentTime = 0;
 
-      const playPromise = video.play();
-
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.log('Falha no autoplay:', error);
-          setTimeout(() => {
-            video.play().catch(e => console.log('Segunda tentativa falhou:', e));
-          }, 100);
-        });
-      }
+      video.play().catch(error => {
+        console.log('Falha no autoplay:', error);
+        // Tenta reproduzir novamente após um delay
+        setTimeout(() => {
+          video.play().catch(e => console.log('Segunda tentativa falhou:', e));
+        }, 100);
+      });
     }
   }
 
@@ -93,8 +72,7 @@ export class Home implements AfterViewInit {
 
     if (video) {
       video.pause();
-      video.currentTime = 0; // Volta ao início
-
+      video.currentTime = 0;
     }
   }
 
@@ -160,16 +138,13 @@ export class Home implements AfterViewInit {
       comentario: 'A fusão perfeita entre tecnologia de ponta e luxo atemporal. Os veículos da LuxCar não são apenas meios de transporte, são extensões do sucesso e da excelência que busco em todos os aspectos da minha vida.',
       estrelas: 5
     },
-
     {
       nome: 'Camille de Laurent',
       cargo: 'Embaixadora de Marcas de Luxo',
       foto: 'assets/images/clientes/cliente9.png',
-      comentario: 'A excelência da LuxCar redefine o padrão do serviço automotivo premium. Cada detalhe, desde a reserva até a entrega, é executado com perfeição que rivaliza com as mais refinadas experiências europeias. Uma verdadeira obra-prima.',
+      comentario: 'A excelência da LuxCar redefine o padrão do serviço automotivo premium. Cada detalhe, desde a reserva até a entregas, é executado com perfeição que rivaliza com as mais refinadas experiências europeias. Uma verdadeira obra-prima.',
       estrelas: 5
     }
-
-
   ];
 
   get clientesVisiveis() {
