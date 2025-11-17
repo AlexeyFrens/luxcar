@@ -107,3 +107,13 @@
 .arrow {
   font-size: 0.875rem;
 }
+
+.card-container.indisponivel {
+  opacity: 0.5;
+  filter: grayscale(90%);
+  background-color: #f0f0f0;
+}
+
+.card-container .card-button:disabled {
+  cursor: not-allowed;
+}

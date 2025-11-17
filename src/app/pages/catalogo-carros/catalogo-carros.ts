@@ -28,6 +28,10 @@ export const MY_FORMATS = {
   }
 }
 
+interface CarroSituacao extends Carro {
+  isAvailable: boolean;
+}
+
 @Component({
   selector: 'app-catalogo-carros',
   standalone: true,
@@ -50,9 +54,9 @@ export const MY_FORMATS = {
   styleUrl: './catalogo-carros.css',
 })
 export class CatalogoCarros implements OnInit {
-  listaCarrosCompleta: Carro[] = [];
-  listaCarrosExibidos: Carro[] = [];
-  listaFiltrada: Carro[] = [];
+  listaCarrosCompleta: CarroSituacao[] = [];
+  listaCarrosExibidos: CarroSituacao[] = [];
+  listaFiltrada: CarroSituacao[] = [];
   limiteCarros = 8;
   incremento = 8;
 
@@ -92,7 +96,10 @@ export class CatalogoCarros implements OnInit {
 
   ngOnInit(): void {
     this.service.findAll().subscribe(carros => {
-      this.listaCarrosCompleta = carros
+      this.listaCarrosCompleta = carros.map(carro => ({
+        ...carro,
+        isAvailable: true
+      }))
       this.aplicarFiltro()
     });
   }
@@ -100,9 +107,9 @@ export class CatalogoCarros implements OnInit {
   aplicarFiltro(): void {
     const termo = this.filtro.trim().toLowerCase();
 
-    if(termo === "") {
+    if (termo === "") {
       this.listaFiltrada = this.listaCarrosCompleta;
-    }else {
+    } else {
       this.listaFiltrada = this.listaCarrosCompleta.filter(carro =>
         carro.carBrand?.toLowerCase().includes(termo)
       )
@@ -118,24 +125,81 @@ export class CatalogoCarros implements OnInit {
   }
 
   search() {
-    const toJsonData = JSON.parse(JSON.stringify(this.bookingForm.value))
+    const formValue = this.bookingForm.value;
+    const pickupLocation = formValue.pickupLocation
+    const startDate = formValue.dateRange?.startDate ? new Date(formValue.dateRange.startDate) : null
+    const endDate = formValue.dateRange?.endDate ? new Date(formValue.dateRange.endDate) : null
+    const time = formValue.time ? new Date(formValue.time)
+      .toLocaleTimeString('pt-BR', {hour: "2-digit", minute: "2-digit", timeZone: 'America/Sao_Paulo'}) : null
 
-    const timeFormated = new Date(toJsonData.time);
-    const startDateFormated = new Date(toJsonData.dateRange.startDate)
-    const endDateFormated = new Date(toJsonData.dateRange.endDate)
+    if (!pickupLocation || !startDate || !endDate || !time) {
+      alert("Por favor, preencha todos os dados antes de buscar.")
+      return
+    }
 
-    alert(
-      "Local: " + toJsonData.pickupLocation + "\nRetirada: " + startDateFormated.toLocaleDateString('pt-BR') +
-      "\nDevolução: " + endDateFormated.toLocaleDateString('pt-BR') +
-      "\nHorário: " + timeFormated.toLocaleTimeString('pt-BR', {hour: "2-digit", minute: "2-digit", timeZone: 'America/Sao_Paulo'})
-    )
+    this.listaCarrosCompleta.forEach(carro => {
+      carro.isAvailable = this.checkCarAvailability(carro, pickupLocation, startDate, endDate, time);
+    });
+
+    this.aplicarFiltro();
+  }
+
+  checkCarAvailability(carro: Carro, location: string, startDate: Date, endDate: Date, time: string): boolean {
+    if (carro.location != location) {
+      return false
+    }
+
+    if (!carro.bookings || carro.bookings.length == 0) {
+      return true
+    }
+
+    const [hour, minute] = time.split(':').map(Number);
+
+    const startDateTime = new Date(startDate)
+    startDateTime.setHours(hour, minute)
+
+    const endDateTime = new Date(endDate)
+    endDateTime.setHours(hour, minute)
+
+    for(const booking of carro.bookings) {
+
+      const [bookingHour, bookingMinute] = booking.time.split(':').map(Number);
+
+      const [anoStart, mesStart, diaStart] = booking.startDate.split('-').map(Number);
+      const bookingStartDateTime = new Date(anoStart, mesStart - 1, diaStart, bookingHour, bookingMinute);
+
+      const [anoEnd, mesEnd, diaEnd] = booking.endDate.split('-').map(Number);
+      const bookingEndDateTime = new Date(anoEnd, mesEnd - 1, diaEnd, bookingHour, bookingMinute);
+
+      console.log("StartBooking " + bookingStartDateTime + " EndBooking " + bookingEndDateTime);
+      console.log("Start " + startDateTime + " End " + endDateTime);
+
+      if (startDateTime < bookingEndDateTime && endDateTime > bookingStartDateTime) {
+        return false
+      }
+    }
+
+    return true
   }
 
   clearForm(): void {
     this.bookingForm.reset();
+
+    this.listaCarrosCompleta.forEach(carro => carro.isAvailable = true)
+
+    this.aplicarFiltro();
   }
 
-  abrirModalReserva(carro: Carro): void {
+  abrirModalReserva(carro: CarroSituacao): void {
+
+    if (this.bookingForm.value.pickupLocation == null
+      || this.bookingForm.value.time == null
+      || this.bookingForm.value.dateRange?.startDate == null
+      || this.bookingForm.value.dateRange?.endDate == null) {
+      alert("Antes de continuar. Insira os dados de retirada e devolução.")
+      return
+    }
+
     const bookingData = this.bookingForm.value;
 
     const formattedStartDate = bookingData.dateRange?.startDate

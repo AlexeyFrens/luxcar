@@ -1,4 +1,4 @@
-<div class="card-container">
+<div class="card-container" [ngClass]="{'indisponivel': !isAvailable}">
   <img [src]="carro.imageUrl" alt="{{carro.title}}">
 
   <div class="card-content">
@@ -15,7 +15,9 @@
         <li class="detail">Lugares: {{carro.seats}}</li>
       </ul>
 
-      <button class="card-button" (click)="onReservarClick()">Reservar <span class="material-symbols-outlined arrow">arrow_right_alt</span></button>
+      <button class="card-button" (click)="onReservarClick()" [disabled]="!isAvailable">
+        Reservar <span class="material-symbols-outlined arrow">arrow_right_alt</span>
+      </button>
     </div>
   </div>
 </div>

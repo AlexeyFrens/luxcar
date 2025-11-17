@@ -8,6 +8,9 @@ export interface Carro {
   engine: string,
   power: number,
   seats: number
+
+  location: string;
+  bookings: { startDate: string; endDate: string; time: string }[];
 }
 export interface Cliente {
   id?: number,

@@ -55,7 +55,10 @@
 
   <div class="carros-cards">
     @for (carro of listaCarrosExibidos; track carro) {
-      <app-carros-card [carro]="carro" (reservaClicada)="abrirModalReserva(carro)"></app-carros-card>
+      <app-carros-card
+        [carro]="carro"
+        [isAvailable]="carro.isAvailable"
+        (reservaClicada)="abrirModalReserva(carro)"></app-carros-card>
     }
   </div>
 

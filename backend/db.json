@@ -8,7 +8,15 @@
       "description": "O Huracán EVO Spyder permite experimentar a emoção de uma condução extrema.",
       "engine": "V10",
       "power": 640,
-      "seats": 2
+      "seats": 2,
+      "location": "Aeroporto Congonhas",
+      "bookings": [
+        {
+          "startDate": "2025-11-20",
+          "endDate": "2025-11-25",
+          "time": "09:30"
+        }
+      ]
     },
     {
       "id": "1",
@@ -18,7 +26,9 @@
       "description": "Design agressivo, desempenho avassalador e a exclusividade de estar ao volante de um dos carros mais raros do planeta.",
       "engine": "V12",
       "power": 1015,
-      "seats": 2
+      "seats": 2,
+      "location": "Aeroporto Congonhas",
+      "bookings": []
     },
     {
       "id": "3",
@@ -28,7 +38,9 @@
       "description": "Idealizada por clientes extraordinários e realizada pelos mestres artesãos da Coachbuild, esta imaginação singular honra os proprietários’ pela reverência ao longo da vida pela vida no mar.",
       "engine": "V12",
       "power": 570,
-      "seats": 4
+      "seats": 4,
+      "location": "Aeroporto Catarina",
+      "bookings": []
     },
     {
       "id": "4",
@@ -38,7 +50,9 @@
       "description": "Um ícone singular, o Exelero combina potência brutal com requinte absoluto. Criado para ser único, ele representa status, sofisticação e a imponência de quem só aceita o extraordinário.",
       "engine": "V12",
       "power": 700,
-      "seats": 2
+      "seats": 2,
+      "location": "Filial Faria Lima",
+      "bookings": []
     },
     {
       "id": "5",
@@ -48,7 +62,9 @@
       "description": "Homenagem moderna ao icônico EB110, o Centodieci é limitado a apenas 10 unidades no mundo. Potência, design futurista e herança Bugatti unidos em um superesportivo que exala exclusividade.",
       "engine": "W16",
       "power": 1600,
-      "seats": 2
+      "seats": 2,
+      "location": "Aeroporto Congonhas",
+      "bookings": []
     },
     {
       "id": "6",
@@ -58,7 +74,9 @@
       "description": "Considerado uma joia sobre rodas, o Zonda HP Barchetta foi criado em quantidade ínfima, tornando-se um dos carros mais raros já produzidos.",
       "engine": "V12",
       "power": 789,
-      "seats": 2
+      "seats": 2,
+      "location": "Aeroporto Catarina",
+      "bookings": []
     },
     {
       "id": "7",
@@ -68,7 +86,9 @@
       "description": "Uma interpretação moderna do estilo da carroceria do roadster, Droptail representa o próximo capítulo de construção de carrocerias Rolls-Royce.",
       "engine": "V12",
       "power": 601,
-      "seats": 2
+      "seats": 2,
+      "location": "Filial Faria Lima",
+      "bookings": []
     },
     {
       "id": "8",
@@ -78,7 +98,9 @@
       "description": "Poucos carros chamam a atenção como o Continental GT. Ícone da Bentley há mais de 20 anos, sua nova quarta geração está disponível em quatro modelos impressionantes.",
       "engine": "V8",
       "power": 771,
-      "seats": 4
+      "seats": 4,
+      "location": "Aeroporto Catarina",
+      "bookings": []
     },
     {
       "id": "9",
@@ -88,7 +110,9 @@
       "description": "Para aqueles que valorizam a raridade em sua forma mais autêntica, a Rolls-Royce Motor Cars apresenta o Coachbuild, uma criação verdadeiramente singular",
       "engine": "V12",
       "power": 460,
-      "seats": 2
+      "seats": 2,
+      "location": "Filial Faria Lima",
+      "bookings": []
     }
   ],
   "cliente": [
