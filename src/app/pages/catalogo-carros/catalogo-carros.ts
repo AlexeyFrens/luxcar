@@ -60,6 +60,16 @@ export class CatalogoCarros implements OnInit {
 
   minDate: Date;
 
+  modal = ""
+
+  dadosReserva: {
+    carro: Carro | null;
+    bookingInformation: any
+  } = {
+    carro: null,
+    bookingInformation: null,
+  }
+
   bookingForm = new FormGroup({
     pickupLocation: new FormControl(null),
     dateRange: new FormGroup({
@@ -123,5 +133,39 @@ export class CatalogoCarros implements OnInit {
 
   clearForm(): void {
     this.bookingForm.reset();
+  }
+
+  abrirModalReserva(carro: Carro): void {
+    const bookingData = this.bookingForm.value;
+
+    const formattedStartDate = bookingData.dateRange?.startDate
+      ? new Date(bookingData.dateRange.startDate).toLocaleDateString()
+      : null;
+
+    const formattedEndDate = bookingData.dateRange?.endDate
+      ? new Date(bookingData.dateRange.endDate).toLocaleDateString()
+      : null;
+
+    const formattedTime = bookingData.time
+      ? new Date(bookingData.time)
+        .toLocaleTimeString('pt-BR', {hour: "2-digit", minute: "2-digit", timeZone: 'America/Sao_Paulo'})
+      : null;
+
+    const bookingInfoParaSalvar = {
+      ...bookingData,
+      dateRange: {
+        startDate: formattedStartDate,
+        endDate: formattedEndDate
+      },
+      time: formattedTime,
+    };
+
+    this.dadosReserva.carro = carro
+    this.dadosReserva.bookingInformation = bookingInfoParaSalvar;
+    this.modal = "modal"
+  }
+
+  closeModal() {
+    this.modal = ""
   }
 }

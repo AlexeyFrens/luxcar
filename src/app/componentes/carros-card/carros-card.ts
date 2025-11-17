@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Carro} from '../../core/types/type';
 
 @Component({
@@ -16,4 +16,10 @@ export class CarrosCard {
     seats: 0,
     title: ''
   };
+
+  @Output() reservaClicada = new EventEmitter<Carro>();
+
+  onReservarClick(): void {
+    this.reservaClicada.emit(this.carro);
+  }
 }
