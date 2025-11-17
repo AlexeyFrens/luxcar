@@ -49,17 +49,50 @@
     <button type="button" matButton="filled" class="clear-button limpa" (click)="clearForm()">Limpar</button>
   </form>
 
-  <span class="car-input-container"><input type="text" name="car" id="car-input" placeholder="Busque um modelo"></span>
+  <span class="car-input-container">
+    <input type="text" name="car" id="car-input" placeholder="Busque um modelo" [(ngModel)]="filtro" (input)="aplicarFiltro()">
+  </span>
 
   <div class="carros-cards">
     @for (carro of listaCarrosExibidos; track carro) {
-      <app-carros-card [carro]="carro"></app-carros-card>
+      <app-carros-card [carro]="carro" (reservaClicada)="abrirModalReserva(carro)"></app-carros-card>
     }
   </div>
 
-  @if (listaCarrosCompleta.length !== 8 && listaCarrosExibidos.length !== listaCarrosCompleta.length) {
+  @if (listaCarrosExibidos.length < listaFiltrada.length) {
     <div class="button-container">
       <button class="button-ver-mais" (click)="aumentarLista()">Veja mais</button>
     </div>
   }
+
+  <div class="overlay {{modal}}"></div>
+
+  <form class="reserva-form {{modal}}">
+
+    <button class="close-button" (click)="closeModal()"><img src="assets/images/reserva-icons/close.svg" alt="X para fechar modal"></button>
+
+    <h1>Reserve Seu Carro Exclusivo</h1>
+    <h2>Transforme sua viagem em um momento inesquecível</h2>
+    <p>Local de retirada e devolução: {{dadosReserva.bookingInformation?.pickupLocation}}</p>
+    <div class="horario-info">
+      <p>Retirada em: {{dadosReserva.bookingInformation?.dateRange.startDate}} - {{dadosReserva.bookingInformation?.time}}</p>
+      <p>Devolução em: {{dadosReserva.bookingInformation?.dateRange.endDate}}  - {{dadosReserva.bookingInformation?.time}}</p>
+    </div>
+
+    <div class="reserva-inputs">
+      <div class="input-wrapper icon-name">
+        <input type="text" name="nome" id="nome" placeholder="Nome">
+      </div>
+      <div class="input-wrapper icon-email">
+        <input type="text" name="email" id="email" placeholder="Email">
+      </div>
+      <div class="input-wrapper icon-cpf">
+        <input type="text" name="cpf" id="cpf" placeholder="CPF">
+      </div>
+      <div class="input-wrapper icon-telefone">
+        <input type="text" name="telefone" id="telefone" placeholder="Telefone">
+      </div>
+      <button type="submit" class="button-reserva-form">Reservar</button>
+    </div>
+  </form>
 </section>

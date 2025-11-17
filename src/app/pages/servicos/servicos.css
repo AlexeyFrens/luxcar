@@ -1,0 +1,227 @@
+/* ===== Banner Vídeo Serviços ===== */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* altura do banner */
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+
+/*====Seção serviços - Garage Experience ====*/
+
+
+.servico-exclusivo {
+  background: #0b3b33;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.titulo-secao {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #d8c6aa;
+  margin-bottom: 50px;
+}
+
+.servico-conteudo {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.servico-imagem {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+
+.servico-subtitulo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #F5F5DC;
+  margin-bottom: 10px;
+}
+
+.servico-descricao {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #f5f5dc;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+
+.btn-primario {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--bg-button-default);
+  color: var(--text-button-contrasted);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-primario:hover {
+  background-color: var(--bg-button-default-hover);
+}
+
+/* Variações com classes modificadoras */
+.btn-primario--grande {
+  padding: 12px 30px;
+  border-radius: 6px;
+}
+
+/* Container centralizado */
+.concierge-botao-container {
+  text-align: center;
+}
+
+/*=========================Personal Lifestyle Manager=======================*/
+
+.concierge {
+  padding: 80px 40px;
+  text-align: left;
+}
+
+/* Container de imagem + texto */
+.concierge-container {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.concierge-img {
+  width: 380px;
+  border-radius: 8px;
+
+}
+
+.concierge-titulo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color:#36454f;
+  margin-bottom: 4px;
+}
+
+.concierge-subtitulo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #8e6d4e;
+  margin-bottom: 20px;
+}
+
+.concierge-descricao {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #36454f;
+  max-width: 500px;
+}
+
+/* Cards de Serviços */
+.concierge-cards {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 40px auto 55px;
+  flex-wrap: wrap;
+}
+
+.card-concierge {
+  width: 320px;
+  background: #b67c52;
+  border-radius: 6px;
+  overflow: hidden;
+  padding-bottom: 18px;
+  color: #fff;
+  border: 2px solid #b67c52;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-concierge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(182, 124, 82, 0.3);
+}
+
+
+.card-concierge img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.card-titulo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 14px 0 10px;
+}
+
+.card-texto {
+  font-family: var(--font-texto);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  padding: 0 18px;
+  text-align: center;
+}
+
+
+
+
+@media (max-width: 992px) {
+  .concierge-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .concierge-img {
+    width: 320px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .video-container {
+    height: 60vh;
+  }
+
+  .hero-titulo {
+    font-size: 2.2rem;
+  }
+
+
+}
+
+
+
+

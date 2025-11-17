@@ -4,14 +4,10 @@
 }
 
 .hero-video {
-  /* position: fixed;
-  top: 0;
-  left: 0; */
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 
 .experiencia-status {
   padding: 80px 0;
@@ -25,20 +21,16 @@
   color: var(--mat-sys-primary);
   margin-bottom: 50px;
   font-family: 'Cormorant Garamond';
-
 }
 
 .conteudo-principal {
   display: flex;
-  /*deixa um do lado do outro*/
   align-items: center;
   justify-content: space-between;
   gap: 60px;
   text-align: left;
   flex-wrap: wrap;
-
 }
-
 
 .imagem-luxcar {
   width: 450px;
@@ -62,33 +54,40 @@
   text-align: start;
 }
 
-
 .bloco-texto p {
   font-size: 1em;
   line-height: 1.6;
   color: var(--mat-sys-primary);
 }
 
-.btn-frota.primeiro {
-  align-self: end;
+.btn-primario {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--bg-button-default);
+  color: var(--text-button-contrasted);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.btn-frota {
-  background-color: var(--mat-sys-secondary);
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 500;
-  display: inline-block;
+.btn-primario:hover {
+  background-color: var(--bg-button-default-hover);
+}
+
+/* Regras para alinhamento específico */
+.bloco-texto.primeiro .btn-primario {
+  align-self: flex-end;
+}
+
+.bloco-texto .btn-primario {
   align-self: flex-start;
 }
-
-.btn-frota:hover {
-  background-color: #4d2600;
-}
-
-
 
 /* ================================== Benefícios ======================================================= */
 .beneficios {
@@ -120,11 +119,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 35px;
-
 }
 
 /* CARDS */
-
 .beneficio-icon {
   display: flex;
   justify-content: center;
@@ -136,10 +133,7 @@
   border: 3px solid #c8a96c;
   padding: 45px 28px;
   transition: 0.3s ease-in-out;
-
-
 }
-
 
 .beneficio-card:hover {
   transform: translateY(-6px);
@@ -147,8 +141,6 @@
   box-shadow: 0 0 18px rgba(200, 169, 108, 0.8);
   border-color: #e3c98b;
 }
-
-
 
 .beneficio-icon img {
   width: 120px;
@@ -165,8 +157,6 @@
   color: #f1e9c6;
 }
 
-
-
 /* TÍTULO */
 .beneficio-card h3 {
   font-family: Montserrat;
@@ -181,7 +171,6 @@
   line-height: 1.6;
 }
 
-
 /*LOGO*/
 .beneficios-logo {
   margin-top: 60px;
@@ -191,9 +180,7 @@
 
 .beneficios-logo img {
   width: 190px;
-
 }
-
 
 /* ================================================ Seção Destaques ========================================= */
 .destaques {
@@ -252,16 +239,12 @@
 /* Efeito de expansão no hover */
 .video-card:hover {
   transform: scale(1.15) translateY(-10px);
-  /* Expande 15% e sobe */
   max-width: 320px;
-  /* Aumenta a largura máxima */
   z-index: 10;
-  /* Traz para frente */
   box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.6),
     0 0 0 2px rgba(200, 169, 108, 0.3),
     0 0 30px rgba(200, 169, 108, 0.4);
-  /* Glow dourado */
 }
 
 /* Efeito sutil nos cards não hoverados */
@@ -287,12 +270,10 @@
   transition: all 0.4s ease;
 }
 
-
 /* Quando o mouse passa por cima, o vídeo toca */
 .video-card:hover .video-destaque {
   filter: brightness(1.1) saturate(1.2) contrast(1.05);
 }
-
 
 .video-card:hover::before {
   opacity: 0;
@@ -330,14 +311,12 @@
       0 0 0 2px rgba(200, 169, 108, 0.3),
       0 0 30px rgba(200, 169, 108, 0.4);
   }
-
   50% {
     box-shadow:
       0 25px 50px rgba(0, 0, 0, 0.6),
       0 0 0 2px rgba(200, 169, 108, 0.4),
       0 0 40px rgba(200, 169, 108, 0.6);
   }
-
   100% {
     box-shadow:
       0 25px 50px rgba(0, 0, 0, 0.6),
@@ -358,7 +337,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-
   .video-card:hover {
     transform: scale(1.1) translateY(-8px);
   }
@@ -369,11 +347,9 @@
     grid-template-columns: 1fr;
     gap: 15px;
   }
-
   .video-card {
     max-width: 300px;
   }
-
   .video-card:hover {
     transform: scale(1.05) translateY(-5px);
   }
@@ -400,7 +376,6 @@
   font-weight: 600;
   letter-spacing: 1px;
 }
-
 
 /* ===== CARROSSEL ===== */
 .carousel-wrapper {
@@ -436,7 +411,6 @@
   transition: opacity 0.3s ease;
 }
 
-
 .cliente-card:hover {
   transform: translateY(-5px);
   border-color: rgba(200, 169, 108, 0.4);
@@ -471,8 +445,6 @@
   position: relative;
   padding: 0 10px;
 }
-
-
 
 /* ===== INFORMAÇÕES DO CLIENTE ===== */
 .cliente-info {
@@ -568,7 +540,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
-  
   .carousel-wrapper {
     gap: 20px;
   }
@@ -578,22 +549,18 @@
   .clientes-section {
     padding: 60px 20px;
   }
-  
   .carousel {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
   .cliente-card {
     padding: 30px 20px;
   }
-  
   .carousel-btn {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
   }
-  
   .titulo-clientes {
     font-size: 2.5rem;
   }
@@ -603,17 +570,14 @@
   .carousel-wrapper {
     gap: 15px;
   }
-  
   .cliente-comentario {
     font-size: 0.9rem;
   }
-  
   .cliente-info {
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
-  
   .cliente-foto {
     width: 50px;
     height: 50px;

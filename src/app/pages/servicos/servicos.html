@@ -1,1 +1,89 @@
-<p>servicos works!</p>
+<section class="servicos-hero">
+  <figure class="video-container">
+    <video #heroVideo autoplay muted loop playsinline preload="auto" class="hero-video">
+      <source src="assets/video/servico-luxcar.mp4" type="video/mp4" />
+    </video>
+  </figure>
+</section>
+
+<section class="servico-exclusivo">
+  <h2 class="titulo-secao">Serviço Exclusivo</h2>
+
+  <div class="servico-conteudo">
+    <img
+      src="assets/images/servicos-img/showroom.png"
+      alt="Garagem Exclusiva LuxCar"
+      class="servico-imagem"
+    />
+
+    <h3 class="servico-subtitulo">Garage Experience Privada</h3>
+    <p class="servico-descricao">
+      Montamos um showroom exclusivo só para você, com acesso privado a modelos raros e colecionáveis,
+      trazendo carros diretamente para sua residência, hotel ou evento.
+    </p>
+
+    <button class="btn-primario" routerLink="/carros">Reservar sua experiência</button>
+  </div>
+</section>
+
+<!--Seção Concierge-->
+<section class="concierge">
+  <div class="concierge-container">
+    <img src="assets/images/servicos-img/concierge.png" alt="Personal Lifestyle Manager" class="concierge-img" />
+    
+    <div class="concierge-texto">
+      <h2 class="concierge-titulo">Personal Lifestyle Manager</h2>
+      <h3 class="concierge-subtitulo">Concierge LuxCar</h3>
+      
+      <p class="concierge-descricao">
+        Do agendamento de compromissos ao acesso VIP nos melhores eventos, da gestão de viagens ao cuidado com a sua
+        agenda social, a Personal Lifestyle Manager da LuxCar está ao seu lado para que você viva sem preocupações e
+        aproveite apenas o extraordinário.
+      </p>
+    </div>
+  </div>
+
+  <div class="concierge-cards">
+    <div class="card-concierge">
+      <div class="card-header">
+        <h4 class="card-titulo">Reservas Exclusivas</h4>
+      </div>
+      <img src="assets/images/servicos-img/reservas.png" alt="Reservas Exclusivas" />
+      <div class="card-content">
+        <p class="card-texto">
+          Acesso prioritário aos melhores restaurantes Michelin, clubes privados, resorts e experiências únicas em qualquer
+          parte do mundo.
+        </p>
+      </div>
+    </div>
+
+    <div class="card-concierge">
+      <div class="card-header">
+        <h4 class="card-titulo">Transfers e Logística Premium</h4>
+      </div>
+      <img src="assets/images/servicos-img/transfer.png" alt="Transfers e Logística Premium" />
+      <div class="card-content">
+        <p class="card-texto">
+          Agendamento de voos privados, helicópteros, iates e transfers de luxo com integração total ao veículo reservado.
+        </p>
+      </div>
+    </div>
+
+    <div class="card-concierge">
+      <div class="card-header">
+        <h4 class="card-titulo">Acesso VIP a Lançamentos</h4>
+      </div>
+      <img src="assets/images/servicos-img/eventos.png" alt="Acesso VIP a Lançamentos Automotivos" />
+      <div class="card-content">
+        <p class="card-texto">
+          Clientes LuxCar recebem convites exclusivos para lançamentos automotivos, feiras de colecionadores e outros eventos de luxo.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="concierge-botao-container">
+    <button class="btn-primario btn-primario--grande" routerLink="/contato">Falar com um especialista</button>
+  </div>
+</section>
+

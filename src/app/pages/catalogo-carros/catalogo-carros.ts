@@ -8,7 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerIntl, MatDatepickerModule} from '@angular/material/datepicker';
 import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {provideMomentDateAdapter} from '@angular/material-moment-adapter';
 import 'moment/locale/pt-br';
 import {MatTimepickerModule} from '@angular/material/timepicker';
@@ -40,6 +40,7 @@ export const MY_FORMATS = {
     MatButtonModule,
     ReactiveFormsModule,
     MatTimepickerModule,
+    FormsModule,
   ],
   providers: [
     provideMomentDateAdapter(),
@@ -51,10 +52,23 @@ export const MY_FORMATS = {
 export class CatalogoCarros implements OnInit {
   listaCarrosCompleta: Carro[] = [];
   listaCarrosExibidos: Carro[] = [];
+  listaFiltrada: Carro[] = [];
   limiteCarros = 8;
   incremento = 8;
 
+  filtro = ""
+
   minDate: Date;
+
+  modal = ""
+
+  dadosReserva: {
+    carro: Carro | null;
+    bookingInformation: any
+  } = {
+    carro: null,
+    bookingInformation: null,
+  }
 
   bookingForm = new FormGroup({
     pickupLocation: new FormControl(null),
@@ -79,14 +93,28 @@ export class CatalogoCarros implements OnInit {
   ngOnInit(): void {
     this.service.findAll().subscribe(carros => {
       this.listaCarrosCompleta = carros
-      this.listaCarrosExibidos = carros.slice(0, this.limiteCarros);
+      this.aplicarFiltro()
     });
+  }
+
+  aplicarFiltro(): void {
+    const termo = this.filtro.trim().toLowerCase();
+
+    if(termo === "") {
+      this.listaFiltrada = this.listaCarrosCompleta;
+    }else {
+      this.listaFiltrada = this.listaCarrosCompleta.filter(carro =>
+        carro.carBrand?.toLowerCase().includes(termo)
+      )
+    }
+
+    this.listaCarrosExibidos = this.listaFiltrada.slice(0, this.limiteCarros);
   }
 
   aumentarLista() {
     this.limiteCarros += this.incremento;
 
-    this.listaCarrosExibidos = this.listaCarrosCompleta.slice(0, this.limiteCarros);
+    this.aplicarFiltro();
   }
 
   search() {
@@ -105,5 +133,39 @@ export class CatalogoCarros implements OnInit {
 
   clearForm(): void {
     this.bookingForm.reset();
+  }
+
+  abrirModalReserva(carro: Carro): void {
+    const bookingData = this.bookingForm.value;
+
+    const formattedStartDate = bookingData.dateRange?.startDate
+      ? new Date(bookingData.dateRange.startDate).toLocaleDateString()
+      : null;
+
+    const formattedEndDate = bookingData.dateRange?.endDate
+      ? new Date(bookingData.dateRange.endDate).toLocaleDateString()
+      : null;
+
+    const formattedTime = bookingData.time
+      ? new Date(bookingData.time)
+        .toLocaleTimeString('pt-BR', {hour: "2-digit", minute: "2-digit", timeZone: 'America/Sao_Paulo'})
+      : null;
+
+    const bookingInfoParaSalvar = {
+      ...bookingData,
+      dateRange: {
+        startDate: formattedStartDate,
+        endDate: formattedEndDate
+      },
+      time: formattedTime,
+    };
+
+    this.dadosReserva.carro = carro
+    this.dadosReserva.bookingInformation = bookingInfoParaSalvar;
+    this.modal = "modal"
+  }
+
+  closeModal() {
+    this.modal = ""
   }
 }
