@@ -160,24 +160,32 @@ tbody tr:hover td {
   color: #444;
 }
 
-.modal-input-group input {
+modal-input-group input {
   flex: 1;
   border: none;
   background: transparent;
   outline: none;
   font-size: 15px;
   color: #333;
+  padding-right: 60px;
 }
 
 
+.password-group {
+  position: relative;
+}
+
 .show-password-modal {
   position: absolute;
-  right: 20px;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 10px;
   color: #333;
   cursor: pointer;
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: .5px;
 }
 
 
@@ -187,7 +195,7 @@ tbody tr:hover td {
   gap: 10px;
 }
 
-/* Botão Atualizar */
+
 .btn-atualizar {
   flex: 1;
   background: #a97142;
@@ -199,7 +207,7 @@ tbody tr:hover td {
   cursor: pointer;
 }
 
-/* Botão seta */
+
 .btn-arrow {
   width: 55px;
   background: #a97142;
@@ -209,4 +217,57 @@ tbody tr:hover td {
   color: white;
   font-size: 22px;
   cursor: pointer;
+}
+
+
+
+
+   /*MODAL */
+
+.modal-input-group {
+  display: flex;
+  align-items: center;
+  background: #fff8d8;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.modal-input-group i {
+  margin-right: 12px;
+  width: 18px;
+  color: #444;
+}
+
+.modal-input-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: #222;
+}
+
+
+.password-group {
+  position: relative;
+}
+
+.show-password-modal {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: #666;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+
+.password-group input {
+  padding-right: 60px;
 }

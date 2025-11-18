@@ -68,4 +68,15 @@ export class Clientes implements OnInit {
     });
   }
 
+
+
+
+  senhaVisivel = false;
+
+  toggleSenha() {
+    this.senhaVisivel = !this.senhaVisivel;
+    const campo = document.querySelector('#inputSenha') as HTMLInputElement;
+    if (campo) campo.type = this.senhaVisivel ? 'text' : 'password';
+  }
+
 }
