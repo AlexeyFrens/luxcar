@@ -1,6 +1,6 @@
 
 export interface Carro {
-  id?: number,
+  id?: string,
   imageUrl: string,
   carBrand?: string,
   title: string,

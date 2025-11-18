@@ -3,6 +3,7 @@
     {
       "id": "1",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762380748/bazid6ajdqe6lhm6wz7q.png",
+      "carBrand": "Lamborghini",
       "title": "Lamborghini Huracan Spyder",
       "description": "O Huracán EVO Spyder permite experimentar a emoção de uma condução extrema.",
       "engine": "V10",
@@ -20,6 +21,7 @@
     {
       "id": "1",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762382571/pxej3giqdss8rzwsdkxt.png",
+      "carBrand": "Lamborghini",
       "title": "Lamborghini Revuelto",
       "description": "Design agressivo, desempenho avassalador e a exclusividade de estar ao volante de um dos carros mais raros do planeta.",
       "engine": "V12",
@@ -31,6 +33,7 @@
     {
       "id": "3",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762382934/dii9h8o7zjnb2ockkhjs.png",
+      "carBrand": "Rolls-Royce",
       "title": "Rolls-Royce Boat Tail",
       "description": "Idealizada por clientes extraordinários e realizada pelos mestres artesãos da Coachbuild, esta imaginação singular honra os proprietários’ pela reverência ao longo da vida pela vida no mar.",
       "engine": "V12",
@@ -42,6 +45,7 @@
     {
       "id": "4",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383155/ncbrudyunjhh7rznz4aw.png",
+      "carBrand": "Mercedes",
       "title": "Mercedes-Maybach Exelero",
       "description": "Um ícone singular, o Exelero combina potência brutal com requinte absoluto. Criado para ser único, ele representa status, sofisticação e a imponência de quem só aceita o extraordinário.",
       "engine": "V12",
@@ -53,6 +57,7 @@
     {
       "id": "5",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383323/yjlberpr7qfb7mabedwr.png",
+      "carBrand": "Bugatti",
       "title": "Bugatti Centodieci",
       "description": "Homenagem moderna ao icônico EB110, o Centodieci é limitado a apenas 10 unidades no mundo. Potência, design futurista e herança Bugatti unidos em um superesportivo que exala exclusividade.",
       "engine": "W16",
@@ -64,6 +69,7 @@
     {
       "id": "6",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383491/gffzsjbavdzkwfwwoloi.png",
+      "carBrand": "Pagani",
       "title": "Pagani Zonda HP Barchetta",
       "description": "Considerado uma joia sobre rodas, o Zonda HP Barchetta foi criado em quantidade ínfima, tornando-se um dos carros mais raros já produzidos.",
       "engine": "V12",
@@ -75,6 +81,7 @@
     {
       "id": "7",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383714/abs1jzjgtkxrbjq9g9bf.png",
+      "carBrand": "Rolls-Royce",
       "title": "Rolls-Royce La Rose Noire Droptail",
       "description": "Uma interpretação moderna do estilo da carroceria do roadster, Droptail representa o próximo capítulo de construção de carrocerias Rolls-Royce.",
       "engine": "V12",
@@ -86,6 +93,7 @@
     {
       "id": "8",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762383910/uea746m7orvctmpgqc9u.png",
+      "carBrand": "Bentley",
       "title": "Bentley Continental GT Speed",
       "description": "Poucos carros chamam a atenção como o Continental GT. Ícone da Bentley há mais de 20 anos, sua nova quarta geração está disponível em quatro modelos impressionantes.",
       "engine": "V8",
@@ -97,10 +105,23 @@
     {
       "id": "9",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762384062/iq3inq4uqleeojtknd2u.png",
-      "title": "Rolls Royce Sweptail",
+      "carBrand": "Rolls-Royce",
+      "title": "Rolls-Royce Sweptail",
       "description": "Para aqueles que valorizam a raridade em sua forma mais autêntica, a Rolls-Royce Motor Cars apresenta o Coachbuild, uma criação verdadeiramente singular",
       "engine": "V12",
       "power": 460,
+      "seats": 2,
+      "location": "Filial Faria Lima",
+      "bookings": []
+    },
+    {
+      "id": "10",
+      "imageUrl": "https://s2-autoesporte.glbimg.com/dEiFBjJ9dxyYtOO5miNAFmc2oao=/0x0:1920x1280/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2025/Z/C/ZetoVQSw68u0HFBumgdw/ferrari-296-gtb8.jpeg",
+      "carBrand": "Ferrari",
+      "title": "Ferrari 296 Speciale",
+      "description": "O 296 Speciale define o novo padrão em termos de emoção ao volante para a gama de produção da Ferrari",
+      "engine": "V6",
+      "power": "880",
       "seats": 2,
       "location": "Filial Faria Lima",
       "bookings": []
@@ -108,12 +129,22 @@
   ],
   "cliente": [
     {
-      "id": "d95b",
-      "nome": "marcos ",
-      "email": "marcos@gmail.com",
-      "cpf": "95281712497",
-      "telefone": "1198617813",
-      "endereco": "rua da pinha,12"
+      "id-cliente": 1,
+      "nome": "Márcio José",
+      "cpf": "412.123.123-12",
+      "email": "marcio@gmail.com",
+      "telefone": "(11)9538-7645",
+      "endereco": "rua de askaban,13",
+      "id": "8e09"
+    },
+    {
+      "id-cliente": 2,
+      "nome": "Silmara Vitorino",
+      "cpf": "421.143.143-12",
+      "email": "silmara@gmail.com",
+      "telefone": "(11)9538-7645",
+      "endereco": "rua da paz,123",
+      "id": "45f4"
     }
   ]
 }
