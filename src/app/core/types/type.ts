@@ -13,6 +13,7 @@ export interface Carro {
   bookings: { startDate: string; endDate: string; time: string }[];
 }
 export interface Cliente {
+  idCliente: number | undefined;
   id?: number,
   nome: string,
   cpf: string,

@@ -15,8 +15,17 @@
 
         <div class="input-group">
           <i data-feather="mail"></i>
-          <input id="email"  name="email" [(ngModel)]="cliente.email"  type="email" placeholder="example@email.com" required />
+          <input id="email"
+                 name="email"
+                 [(ngModel)]="cliente.email"
+                 type="email"
+                 placeholder="example@email.com"
+                 required
+                 oninvalid="this.setCustomValidity('Digite um email válido')"
+                 oninput="this.setCustomValidity('')"
+          />
         </div>
+
 
         <div class="input-group">
           <i data-feather="credit-card"></i>
@@ -55,5 +64,16 @@
            name="cpf"
            [(ngModel)]="cliente.cpf"
            (blur)="cpfInvalido = !validarCPF(cliente.cpf)" />
+
+
+
+
   </div>
+
+
+
+
+
+
+
 </main>
