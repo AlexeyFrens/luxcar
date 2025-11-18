@@ -93,7 +93,7 @@ tbody tr:hover td {
 
 
 
-/* Fundo escurecido */
+
 .edit-modal-overlay {
   position: fixed;
   top: 0;
@@ -107,7 +107,6 @@ tbody tr:hover td {
   z-index: 5000;
 }
 
-/* Container do modal */
 .edit-modal {
   width: 500px;
   background: #0d2a24;
@@ -117,7 +116,7 @@ tbody tr:hover td {
   color: #ffffff;
 }
 
-/* Botão fechar */
+
 .close-btn {
   position: absolute;
   top: 18px;
@@ -129,7 +128,7 @@ tbody tr:hover td {
   cursor: pointer;
 }
 
-/* Título */
+
 .modal-title {
   text-align: center;
   font-size: 22px;
@@ -137,7 +136,7 @@ tbody tr:hover td {
   margin-bottom: 5px;
 }
 
-/* Subtítulo */
+
 .modal-subtitle {
   text-align: center;
   font-size: 12px;
@@ -146,7 +145,7 @@ tbody tr:hover td {
   margin-bottom: 25px;
 }
 
-/* Inputs */
+
 .modal-input-group {
   display: flex;
   align-items: center;
@@ -170,7 +169,7 @@ tbody tr:hover td {
   color: #333;
 }
 
-/* Mostrar senha */
+
 .show-password-modal {
   position: absolute;
   right: 20px;
@@ -181,7 +180,7 @@ tbody tr:hover td {
   text-transform: uppercase;
 }
 
-/* Linha final */
+
 .modal-action-row {
   margin-top: 20px;
   display: flex;
