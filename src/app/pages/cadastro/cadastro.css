@@ -131,3 +131,6 @@ body {
 .submit-btn:hover {
   background-color: #A97142;
 }
+.erro-cpf {
+  border: 1px solid #ff4d4d !important;
+}

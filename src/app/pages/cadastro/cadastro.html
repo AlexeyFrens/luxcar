@@ -46,4 +46,14 @@
       </form>
     </div>
   </div>
+
+
+  <div class="input-group" [ngClass]="{'erro-cpf': cpfInvalido}">
+    <i data-feather="credit-card"></i>
+    <input type="text"
+           id="cpf"
+           name="cpf"
+           [(ngModel)]="cliente.cpf"
+           (blur)="cpfInvalido = !validarCPF(cliente.cpf)" />
+  </div>
 </main>
