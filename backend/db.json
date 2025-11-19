@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "1",
+      "id": "2",
       "imageUrl": "https://res.cloudinary.com/dwoxgol5j/image/upload/v1762382571/pxej3giqdss8rzwsdkxt.png",
       "carBrand": "Lamborghini",
       "title": "Lamborghini Revuelto",
@@ -131,7 +131,7 @@
     {
       "id-cliente": 1,
       "nome": "Márcio José",
-      "cpf": "412.123.123-12",
+      "cpf": "612.455.210-80",
       "email": "marcio@gmail.com",
       "telefone": "(11)9538-7645",
       "endereco": "rua de askaban,13",

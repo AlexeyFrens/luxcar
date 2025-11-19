@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +30,7 @@ export class Home implements AfterViewInit {
     if (video.readyState >= 3) {
       tryPlay();
     } else {
-      video.addEventListener('loadeddata', tryPlay, { once: true });
+      video.addEventListener('loadeddata', tryPlay, {once: true});
     }
   }
 
@@ -40,7 +40,7 @@ export class Home implements AfterViewInit {
       video.muted = true;
       video.preload = 'metadata';
 
-      
+
       video.addEventListener('error', (e) => {
         console.error(`Erro no vídeo destaque ${index + 1}:`, e);
       });

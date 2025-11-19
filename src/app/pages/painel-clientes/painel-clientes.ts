@@ -6,17 +6,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-clientes',
+  selector: 'app-painel-clientes',
   standalone: true,
   imports: [
     RouterModule,
     CommonModule,
     FormsModule,
   ],
-  templateUrl: './clientes.html',
-  styleUrls: ['./clientes.css']
+  templateUrl: './painel-clientes.html',
+  styleUrls: ['./painel-clientes.css']
 })
-export class Clientes implements OnInit {
+export class PainelClientes implements OnInit {
 
   listaClientes: Cliente[] = [];
 

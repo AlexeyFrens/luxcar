@@ -93,7 +93,7 @@
         planejado. Nosso serviço concierge está pronto para atender desejos exclusivos, oferecendo praticidade, conforto
         e sofisticação sob medida para você. Uma experiência reservada apenas a quem exige o extraordinário.
       </p>
-      <a href="#" class="btn-primario">Saiba mais →</a>
+      <a href="/servicos" class="btn-primario">Saiba mais →</a>
     </div>
 
     <div class="home-viagem">
@@ -134,15 +134,15 @@
   </div>
 </section>
 
-<!-- Seção Opinião de Nossos Clientes -->
+<!-- Seção Opinião de Nossos PainelClientes -->
 <section class="clientes-section">
   <div class="clientes-container">
     <h2 class="titulo-clientes">Opinião dos nossos clientes</h2>
-    
+
 
     <div class="carousel-wrapper">
       <button class="carousel-btn prev" (click)="grupoAnterior()">‹</button>
-      
+
       <div class="carousel">
         <div class="cliente-card" *ngFor="let cliente of clientesVisiveis">
           <div class="card-content">
@@ -150,10 +150,10 @@
             <div class="estrelas">
               <span *ngFor="let estrela of [1,2,3,4,5]">★</span>
             </div>
-            
+
             <!-- Comentário -->
             <p class="cliente-comentario">"{{ cliente.comentario }}"</p>
-            
+
             <!-- Foto e informações -->
             <div class="cliente-info">
               <img [src]="cliente.foto" [alt]="'Foto de ' + cliente.nome" class="cliente-foto" />
@@ -165,15 +165,15 @@
           </div>
         </div>
       </div>
-      
+
       <button class="carousel-btn next" (click)="proximoGrupo()">›</button>
     </div>
 
     <!-- Indicadores -->
     <div class="carousel-indicators">
-      <button 
-        *ngFor="let grupo of [].constructor(totalGrupos); let i = index" 
-        class="carousel-indicator" 
+      <button
+        *ngFor="let grupo of [].constructor(totalGrupos); let i = index"
+        class="carousel-indicator"
         [class.active]="i === clienteGrupoAtual"
         (click)="clienteGrupoAtual = i">
       </button>
