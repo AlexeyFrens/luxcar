@@ -74,7 +74,7 @@
 
   <div class="overlay {{modal}}"></div>
 
-  <form class="reserva-form {{modal}}">
+  <form class="reserva-form {{modal}}" (ngSubmit)="enviarSolicitacao()">
 
     <button class="close-button" (click)="closeModal()"><img src="assets/images/reserva-icons/close.svg" alt="X para fechar modal"></button>
 
@@ -102,4 +102,20 @@
       <button type="submit" class="button-reserva-form">Reservar</button>
     </div>
   </form>
+
+  <div class="confirmation-overlay" [class.active]="mostrarConfirmacao">
+    <div class="confirmation-card">
+      <h1 class="confirmation-title">Solicitação Enviada</h1>
+
+      <p class="confirmation-message">
+        Sua mensagem foi recebida com sucesso. Nossa equipe de especialistas entrará em contato
+        em até 24 horas para oferecer uma experiência totalmente personalizada.
+      </p>
+
+      <img src="assets/images/luxcar_logo.svg" class="confirmation-logo">
+      <button class="confirmation-button" (click)="fecharConfirmacao()">
+        Continuar Navegando
+      </button>
+    </div>
+  </div>
 </section>

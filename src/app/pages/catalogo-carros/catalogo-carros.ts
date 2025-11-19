@@ -68,6 +68,8 @@ export class CatalogoCarros implements OnInit {
 
   modal = ""
 
+  mostrarConfirmacao = false;
+
   mostrarApenasDisponiveis = false;
 
   dadosReserva: {
@@ -239,5 +241,14 @@ export class CatalogoCarros implements OnInit {
 
   closeModal() {
     this.modal = ""
+  }
+
+  enviarSolicitacao() {
+    this.closeModal()
+    this.mostrarConfirmacao = true;
+  }
+
+  fecharConfirmacao() {
+    this.mostrarConfirmacao = false;
   }
 }
