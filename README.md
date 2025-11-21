@@ -1,59 +1,35 @@
-# Luxcar
+# LuxCar - Locadora de Veículos de Luxo
+![Angular 17+](https://img.shields.io/badge/Angular-17+-DC143C)
+![Angular Material](https://img.shields.io/badge/Angular_Material-20.2.12-01458e)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+Sistema web para gestão e locação de veículos de luxo. O projeto conta com uma área pública para clientes (catálogo, reservas) e um painel administrativo para gestão de frota e usuários.
 
-## Development server
+## Tecnologias Utilizadas
+- **Frontend:** Angular 17+ (Standalone Components)
+- **UI Library:** Angular Material & CSS customizado
+- **Backend (Simulado):** JSON-Server
 
-To start a local development server, run:
+## Funcionalidades
+- **Área Pública:**
+  - Landing Page com vídeo hero e destaques.
+  - Catálogo de carros com filtros (Data, Hora, Local, Disponibilidade).
+- **Área Administrativa:**
+  - CRUD de Clientes (com validação de CPF).
+  - CRUD de Carros (Gestão de frota).
+- **Autenticação:** Tela de login e cadastro de administradores.
 
-```bash
-ng serve
-```
+## Como rodar o projeto
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/AlexeyFrens/luxcar.git
 
-## Code scaffolding
+2. Instale as dependências:
+    ```bash
+    npm install
+   
+3. Inicie o servidor de desenvolvimento:
+    ```bash
+    ng serve
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. Acesse http://localhost:4200.
