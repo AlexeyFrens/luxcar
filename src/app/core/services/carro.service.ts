@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CarroService {
-  private readonly API = 'http://localhost:3000/carros';
+  private readonly API = 'https://luxcar-pi3-default-rtdb.firebaseio.com/carros.json';
 
   constructor(private http: HttpClient) {}
 

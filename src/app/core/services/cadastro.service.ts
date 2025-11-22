@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CadastroService {
 
-  private readonly API = 'http://localhost:3000/cliente'; //endereco da API
+  private readonly API = 'https://luxcar-pi3-default-rtdb.firebaseio.com/cliente.json'; //endereco da API
 
   constructor(private http: HttpClient) {} //injecao de dependencia
 
