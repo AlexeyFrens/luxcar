@@ -14,9 +14,9 @@ Sistema web para gestão e locação de veículos de luxo. O projeto conta com u
   - Landing Page com vídeo hero e destaques.
   - Catálogo de carros com filtros (Data, Hora, Local, Disponibilidade).
 - **Área Administrativa:**
-  - CRUD de Clientes (com validação de CPF).
-  - CRUD de Carros (Gestão de frota).
-- **Autenticação:** Tela de login e cadastro de administradores.
+  - CRUD de Clientes (com validação de CPF). Acesse em: `/painel-clientes`
+  - CRUD de Carros (Gestão de frota). Acesse em: `/painel-carros`
+- **Autenticação:** Tela de login e cadastro de clientes. `/login` e `/cadastro`
 
 ## Como rodar o projeto
 
