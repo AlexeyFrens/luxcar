@@ -13,7 +13,14 @@ export class CarroService {
   constructor(private http: HttpClient) {}
 
   findAll(): Observable<Carro[]> {
-    return this.http.get<Carro[]>(this.API);
+    return this.http.get<{ [key: string]: Carro }>(this.API).pipe(
+      map(data => {
+        if (!data) {
+          return [];
+        }
+        return Object.values(data);
+      })
+    );
   }
 
   incluir(carro: Carro): Observable<Carro> {
@@ -24,10 +31,13 @@ export class CarroService {
     return this.http.put<Carro>(url, carro);
   }
   buscarId(): Observable<number | undefined> {
-    return this.http.get<Carro[]>(this.API).pipe(
-      map(carros => {
+    return this.http.get<{ [key: string]: Carro }>(this.API).pipe(
+      map(data => {
+        const carros = data ? Object.values(data) : [];
+
         if (carros && carros.length > 0) {
-          return Number(carros[carros.length - 1].id);
+          const ultimoCarro = carros[carros.length - 1];
+          return ultimoCarro.id ? Number(ultimoCarro.id) : -1;
         } else {
           return -1;
         }
