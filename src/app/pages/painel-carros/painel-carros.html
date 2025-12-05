@@ -65,10 +65,12 @@
     }
 
     <form #modalForm="ngForm" class="modal-form" (ngSubmit)="submeter()">
-      <div class="form-group">
-        <label for="id">ID</label>
-        <input type="text" id="id" [(ngModel)]="carroAtual.id" name="id" [disabled]="true">
-      </div>
+      @if (modo !== 'incluir') {
+        <div class="form-group">
+          <label for="id">ID</label>
+          <input type="text" id="id" [(ngModel)]="carroAtual.id" name="id" [disabled]="true">
+        </div>
+      }
 
       <div class="form-group">
         <label for="imageUrl">URL da Imagem</label>
@@ -110,7 +112,12 @@
         <input type="text" id="location" [(ngModel)]="carroAtual.location" name="location" placeholder="Digite a filial" required>
       </div>
 
-      <button type="submit" class="button-salvar" [disabled]="modalForm.invalid">Adicionar</button>
+      @if(modo === 'incluir') {
+        <button type="submit" class="button-salvar" [disabled]="modalForm.invalid">Adicionar</button>
+      }
+      @else {
+        <button type="submit" class="button-salvar" [disabled]="modalForm.invalid">Editar</button>
+      }
     </form>
   </div>
 }

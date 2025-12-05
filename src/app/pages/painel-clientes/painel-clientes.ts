@@ -88,7 +88,7 @@ export class PainelClientes implements OnInit {
       return;
     }
 
-    this.service.excluircliente(id).subscribe(() => {
+    this.service.excluircliente(String(id)).subscribe(() => {
       this.modalExcluir = false;
       this.ngOnInit();
     });

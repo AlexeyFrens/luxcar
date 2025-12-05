@@ -31,11 +31,11 @@ export class Cadastro implements OnInit {
   ngOnInit(): void {
 
     // Verifico se é alteração ou inclusão
-    this.clienteId = Number(this.route.snapshot.params['id']);
+    this.clienteId = this.route.snapshot.params['id'];
 
     if (this.clienteId) {
 
-      this.service.buscarPorId(this.clienteId).subscribe((cliente) => {
+      this.service.buscarPorId(String(this.clienteId)).subscribe((cliente) => {
         if (cliente) {
           this.cliente.id = cliente.id;
           this.cliente.nome = cliente.nome;

@@ -14,7 +14,7 @@ export interface Carro {
 }
 export interface Cliente {
   idCliente: number | undefined;
-  id?: number,
+  id?: string,
   nome: string,
   cpf: string,
   email: string,

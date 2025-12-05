@@ -8,46 +8,38 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CarroService {
-  private readonly API = 'https://luxcar-pi3-default-rtdb.firebaseio.com/carros.json';
+  private readonly API = 'https://luxcar-pi3-default-rtdb.firebaseio.com/carros';
 
   constructor(private http: HttpClient) {}
 
   findAll(): Observable<Carro[]> {
-    return this.http.get<{ [key: string]: Carro }>(this.API).pipe(
+    return this.http.get<{ [key: string]: Carro }>(`${this.API}.json`).pipe(
       map(data => {
-        if (!data) {
-          return [];
-        }
-        return Object.values(data);
+        // Se não tiver dados, retorna array vazio
+        if (!data) return [];
+
+        // Transforma o Objeto { "key1": {dado}, "key2": {dado} }
+        // em Array [ {id: "key1", ...dado}, {id: "key2", ...dado} ]
+        return Object.keys(data).map(key => ({
+          ...data[key],
+          id: key
+        }));
       })
     );
   }
 
-  incluir(carro: Carro): Observable<Carro> {
-    return this.http.post<Carro>(this.API, carro);
+  incluir(carro: Carro): Observable<any> {
+    // Volta a usar POST. O Firebase gera o ID sozinho e retorna { name: "-MdT..." }
+    return this.http.post(`${this.API}.json`, carro);
   }
-  editar(carro: Carro): Observable<Carro> {
-    const url = `${this.API}/${carro.id}`;
-    return this.http.put<Carro>(url, carro);
-  }
-  buscarId(): Observable<number | undefined> {
-    return this.http.get<{ [key: string]: Carro }>(this.API).pipe(
-      map(data => {
-        const carros = data ? Object.values(data) : [];
 
-        if (carros && carros.length > 0) {
-          const ultimoCarro = carros[carros.length - 1];
-          return ultimoCarro.id ? Number(ultimoCarro.id) : -1;
-        } else {
-          return -1;
-        }
-      })
-    );
+  editar(carro: Carro): Observable<any> {
+    // Monta a URL correta: .../carros/-MdT12345.json
+    return this.http.put(`${this.API}/${carro.id}.json`, carro);
   }
-  buscarPorId(id: number): Observable<Carro | undefined> {
-    return this.http.get<Carro>(this.API + `/${id}`);
-  }
-  excluir(id: number): Observable<Carro> {
-    return this.http.delete<Carro>(this.API + `/${id}`);
+
+  // Se o ID for string, o parâmetro aqui deve ser string
+  excluir(id: string): Observable<any> {
+    return this.http.delete(`${this.API}/${id}.json`);
   }
 }

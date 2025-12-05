@@ -37,11 +37,6 @@ export class PainelCarros implements OnInit {
   abrirModalInclusao(): void {
     this.modo = 'incluir';
     this.isModalAberto = true;
-
-    this.service.buscarId().subscribe((ultimoId) => {
-      let novoId = (ultimoId || 0) + 1;
-      this.carroAtual = {id: String(novoId)} as Carro;
-    });
   }
 
   abrirModalEdicao(carro: Carro): void {
@@ -68,7 +63,7 @@ export class PainelCarros implements OnInit {
     const id = this.carroExcluir?.id
 
     if (id) {
-      this.service.excluir(Number(id)).subscribe(() => {
+      this.service.excluir(id).subscribe(() => {
         this.modalExcluir = false;
         this.carregarTabela();
       });
