@@ -134,3 +134,13 @@ body {
 .erro-cpf {
   border: 1px solid #ff4d4d !important;
 }
+
+@media (max-width: 600px) {
+  .image-section {
+    display: none;
+  }
+
+  .admin-container {
+    grid-template-columns: 100%;
+  }
+}

@@ -19,12 +19,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
 }
 
 .form-wrapper {
   width: 100%;
   max-width: 450px;
+  padding: 40px;
 }
 
 .form-section h2 {
@@ -113,4 +113,14 @@ body {
 
 .submit-btn:hover {
   background-color: #A97142;
+}
+
+@media (max-width: 600px) {
+  .image-section {
+    display: none;
+  }
+
+  .login-container {
+    grid-template-columns: 100%;
+  }
 }
