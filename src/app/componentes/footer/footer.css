@@ -77,3 +77,11 @@
 .right-side .contacts-container .contact:nth-child(3)::before {
   background-image: url("/assets/images/contacts_icons/location_icon.svg");
 }
+
+@media (max-width: 540px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+}

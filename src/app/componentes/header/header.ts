@@ -12,4 +12,10 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   styleUrl: './header.css'
 })
 export class Header {
+
+  isOpen: boolean = false;
+
+  switchLinks() {
+    this.isOpen = !this.isOpen;
+  }
 }

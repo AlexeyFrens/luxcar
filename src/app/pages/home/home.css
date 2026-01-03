@@ -32,12 +32,17 @@
   flex-wrap: wrap;
 }
 
+.home-viagem {
+  display: flex;
+  max-width: 450px;
+  max-height: 390px;
+}
+
 .imagem-luxcar {
-  width: 450px;
-  height: 390px;
+  width: 100%;
+  min-height: 100%;
   object-fit: cover;
   border-radius: 12px;
-  flex-shrink: 0;
 }
 
 .bloco-texto.primeiro {
@@ -543,6 +548,10 @@
   .carousel-wrapper {
     gap: 20px;
   }
+
+  .conteudo-principal {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -563,6 +572,21 @@
   }
   .titulo-clientes {
     font-size: 2.5rem;
+  }
+
+  .conteudo-principal {
+    padding: 20px;
+  }
+
+  .beneficios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 550px) {
+  .beneficios-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

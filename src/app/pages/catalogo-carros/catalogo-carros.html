@@ -6,7 +6,7 @@
   <form id="booking-form" [formGroup]="bookingForm">
 
     <mat-form-field class="locais">
-      <mat-label>Onde você quer retirar o carro?</mat-label>
+      <mat-label class="booking-label">Onde você quer retirar o carro?</mat-label>
       <mat-select formControlName="pickupLocation" id="locations">
         <mat-option value="Aeroporto Congonhas">Aeroporto Congonhas</mat-option>
         <mat-option value="Aeroporto Catarina">Aeroporto Catarina</mat-option>
@@ -14,7 +14,7 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field id="dateRange" class="data">
-      <mat-label>Insira o período de reserva</mat-label>
+      <mat-label class="booking-label">Insira o período de reserva</mat-label>
       <mat-date-range-input formGroupName="dateRange" [rangePicker]="datePicker" [min]="minDate">
         <input matStartDate placeholder="Data Retirada" formControlName="startDate">
         <input matEndDate placeholder="Data Devolução" formControlName="endDate">
@@ -30,7 +30,7 @@
     </mat-form-field>
 
     <mat-form-field class="hora">
-      <mat-label>Hora de retirada e devolução</mat-label>
+      <mat-label class="booking-label">Hora de retirada e devolução</mat-label>
       <input matInput formControlName="time" [matTimepicker]="timePicker" matTimepickerMin="08:00" matTimepickerMax="20:00">
       <mat-timepicker-toggle matIconSuffix [for]="timePicker"/>
       <mat-timepicker #timePicker/>

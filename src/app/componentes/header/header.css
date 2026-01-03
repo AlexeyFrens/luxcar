@@ -1,5 +1,6 @@
 
 .nav-container {
+  position: relative;
   background-color: var(--bg-second);
   padding: 20px;
 }
@@ -13,9 +14,14 @@
 }
 
 .nav-links {
-  display: flex;
+  display: none;
   gap: 35px;
   list-style: none;
+}
+
+.nav-links.opened {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .nav-links .nav-link {
@@ -34,4 +40,45 @@
 
 .nav-links .nav-link.active {
   border-bottom-color: var(--text-light);
+}
+
+.button-open-links {
+  position: absolute;
+  right: 20px;
+  top: 5vh;
+  background: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 5px;
+}
+.button-open-links.active {
+  border: 2px solid var(--text-light);
+  border-radius: 10px;
+}
+
+@media (min-width: 480px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .button-open-links {
+    display: none;
+  }
+}
+
+@media(max-width: 480px) {
+  .nav-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-container div {
+    align-items: flex-start;
+    margin: 0;
+  }
 }
