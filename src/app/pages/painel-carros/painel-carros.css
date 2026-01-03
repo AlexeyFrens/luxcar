@@ -9,16 +9,21 @@
 .content-container {
   display: flex;
   flex-direction: column;
-  max-width: 1300px;
   margin: auto;
+  max-width: 1300px;
   text-align: left;
 }
-
-table {
-  border-spacing: 0;
+.table-wrapper {
+  width: 100%;
   margin: 20px auto 80px;
   border: 2px solid var(--bg-second);
   border-radius: 10px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
 }
 
 th:first-child {
@@ -34,10 +39,6 @@ td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid var(--bg-second);
-}
-
-td:first-child {
-  font-weight: bold;
 }
 
 tr:last-child td {
@@ -115,8 +116,12 @@ button {
   padding: 50px 30px 20px;
   border-radius: 8px;
   z-index: 101;
-  width: 100%;
+  width: 95%;
   max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-panel .close-button {
@@ -277,4 +282,28 @@ button {
 
 .btn-cancel:hover {
   background-color: var(--bg-button-disabled-hover);
+}
+
+@media (max-width: 1277px) {
+  .content-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 990px) {
+  .btn-incluir {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 540px) {
+  .modal-form {
+    grid-template-columns: 1fr;
+  }
+
+  .delete-modal {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
