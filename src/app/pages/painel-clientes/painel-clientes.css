@@ -24,13 +24,17 @@ body, html {
   text-align: left;
 }
 
-
-table {
-  border-spacing: 0;
+.table-wrapper {
+  width: 100%;
   margin: 20px auto 80px;
   border: 2px solid var(--bg-second);
   border-radius: 10px;
+  overflow-x: auto;
+}
+
+table {
   width: 100%;
+  border-spacing: 0;
 }
 
 th:first-child {
@@ -50,10 +54,6 @@ td {
 
 td {
   padding: 15px 8px;
-}
-
-td:first-child {
-  font-weight: bold;
 }
 
 tr:last-child td {
@@ -115,8 +115,12 @@ button {
   background-color: var(--bg-second);
   padding: 50px 30px 20px;
   border-radius: 8px;
-  width: 100%;
+  width: 95%;
   max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -299,4 +303,28 @@ button {
 
 .btn-cancel:hover {
   background-color: var(--bg-button-disabled-hover);
+}
+
+@media (max-width: 1277px) {
+  .content-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 990px) {
+  .btn-incluir {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 540px) {
+  .modal-form {
+    grid-template-columns: 1fr;
+  }
+
+  .delete-modal {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
