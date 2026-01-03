@@ -405,3 +405,71 @@
 .confirmation-button:hover {
   background-color: var(--bg-button-default-hover);
 }
+
+@media (max-width: 1170px) {
+  .booking-label {
+    font-size: .8rem;
+  }
+
+  #booking-form {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .carros-section .carros-cards {
+    padding: 0 20px;
+  }
+
+  .options {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  #booking-form {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "locais locais" "data hora" "busca limpa";
+  }
+}
+
+@media (max-width: 530px) {
+  #booking-form {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: "locais" "data" "hora" "busca" "limpa";
+  }
+}
+
+@media (max-width: 940px) {
+  .carros-section .carros-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 670px) {
+  .carros-section .carros-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .carros-section .car-input-container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .carros-section .carros-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .carros-section .title {
+    font-size: 2.5rem;
+  }
+}
